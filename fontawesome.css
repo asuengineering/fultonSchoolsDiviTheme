@@ -1,0 +1,12 @@
+/* easy fontawesome icons*/
+@font-face {
+    font-family: 'ETmodules';
+    src:    url('fonts/custom-icons.eot?6gihly');
+    src:    url('fonts/custom-icons.eot?6gihly#iefix') format('embedded-opentype'),
+    url('fonts/custom-icons.ttf?6gihly') format('truetype'),
+    url('fonts/custom-icons.woff?6gihly') format('woff'),
+    url('fonts/custom-icons.svg?6gihly#custom-icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/* easy fontawesome icons*/
