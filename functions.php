@@ -14,23 +14,44 @@ include(ASU_CHILD_THEME_DIRECTORY . '/includes/asu-child-shortcodes.php');
 include(ASU_CHILD_THEME_DIRECTORY . '/widgets/asu-widget-sidebar.php');
 include(ASU_CHILD_THEME_DIRECTORY . '/widgets/asu-widget-footer.php');
 
-/* enqueue scripts */
-function asu_enqueue_scripts() {
+/* --------------------- 
+Register, enqueue scripts, execute action */
+function fsdt_enqueue_scripts() {
 
-    wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
-    wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/style.css');
+    wp_deregister_style( 'font-awesome' );
 
-    wp_enqueue_style( 'fontawesome', get_stylesheet_directory_uri() . '/fontawesome.css' );
-    wp_enqueue_script( 'functions', get_stylesheet_directory_uri() . '/js/functions.js', array(), false, true );
+    wp_register_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', false, '4.5.0' );
+    wp_register_style( 'parent-style', get_template_directory_uri() . '/style.css');
+    wp_register_style( 'child-style', get_stylesheet_directory_uri() . '/style.css');
+    wp_register_style( 'asu-header-css', get_stylesheet_directory_uri() . '/assets/asu-header/css/asu-nav.css', array(), false, 'all' );
+    wp_register_style( 'roboto-font', 'https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic', array(), '1' );
+    
+    wp_register_script( 'functions', get_stylesheet_directory_uri() . '/js/functions.js', array(), false, true );
+    wp_register_script( 'asu-header', get_stylesheet_directory_uri() . '/assets/asu-header/js/asu-header.min.js', array() , '4.0', true );
+    wp_register_script( 'asu-header-config', get_stylesheet_directory_uri() . '/assets/asu-header/js/asu-header-config.js', array( 'asu-header' ) , '4.0', true );
+    
+    wp_enqueue_style( 'parent-style' );
+    wp_enqueue_style( 'child-style' );
+    wp_enqueue_style( 'asu-header-css' );
+    wp_enqueue_style( 'font-awesome' );
+    wp_enqueue_style( 'roboto-font' );
+    
+    wp_enqueue_script( 'functions' );
+    wp_enqueue_script( 'asu-header' );
+    wp_enqueue_script( 'asu-header-config' );
+
 }
+add_action( 'wp_enqueue_scripts', 'fsdt_enqueue_scripts' );
+/* -------------------------- */
 
+/* Admin scripts, specifically 
+---------------------------------- */ 
 function asu_enqueue_admin_scripts() {
-    wp_enqueue_style('fontawesome', get_stylesheet_directory_uri() . '/fontawesome.css' );
+    wp_register_style('fontawesome', get_stylesheet_directory_uri() . '/fontawesome.css' );
+
 }
-
-add_action('wp_enqueue_scripts', 'asu_enqueue_scripts', 999);
 add_action( 'admin_enqueue_scripts', 'asu_enqueue_admin_scripts');
-
+/* ------------------------------- */
 
 /* activation/deactivation functions */
 function asu_theme_activate () {

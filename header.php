@@ -20,10 +20,6 @@
 	<?php do_action( 'et_head_meta' ); ?>
 
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-
-        <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-	
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         
 	<?php $template_directory_uri = get_template_directory_uri(); ?>
 	<!--[if lt IE 9]>
@@ -36,99 +32,103 @@
 
 	<?php wp_head(); ?>
 
-		<?php include( get_stylesheet_directory() . '/asuthemes/heads/default.shtml'); ?>
-
 </head>
-<body <?php body_class(); ?>>
-    
-        <div id="asu-header">
+<body <?php body_class(); ?>>  
 
-			<?php include( get_stylesheet_directory() . '/asuthemes/includes/gtm.shtml'); ?>
+	<!-- Google Tag Manager ASU Universal-->
+	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KDWN8Z"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','SI_dataLayer','GTM-KDWN8Z');</script>
+	<!-- End Google Tag Manager ASU Universal -->
 
-			<?php include( get_stylesheet_directory() . '/asuthemes/headers/default.shtml'); ?>
+	<div id="asu-header">
+    	<?php include 'header-asu.php'; ?>
+    	<?php echo asu_get_school_names(); ?>
+    </div>  
 
-            <?php echo asu_get_school_names(); ?>
-            
-        </div>    
-    
-        <div id="page-container">
-<?php
-	if ( is_page_template( 'page-template-blank.php' ) ) {
-		return;
-	}
+    <div id="page-container">
 
-	$et_secondary_nav_items = et_divi_get_top_nav_items();
+		<?php
+			if ( is_page_template( 'page-template-blank.php' ) ) {
+				return;
+			}
 
-	$et_phone_number = $et_secondary_nav_items->phone_number;
+			$et_secondary_nav_items = et_divi_get_top_nav_items();
 
-	$et_email = $et_secondary_nav_items->email;
+			$et_phone_number = $et_secondary_nav_items->phone_number;
 
-	$et_contact_info_defined = $et_secondary_nav_items->contact_info_defined;
+			$et_email = $et_secondary_nav_items->email;
 
-	$show_header_social_icons = $et_secondary_nav_items->show_header_social_icons;
+			$et_contact_info_defined = $et_secondary_nav_items->contact_info_defined;
 
-	$et_secondary_nav = $et_secondary_nav_items->secondary_nav;
+			$show_header_social_icons = $et_secondary_nav_items->show_header_social_icons;
 
-	$et_top_info_defined = $et_secondary_nav_items->top_info_defined;
+			$et_secondary_nav = $et_secondary_nav_items->secondary_nav;
 
-	$et_slide_header = 'slide' === et_get_option( 'header_style', 'left' ) || 'fullscreen' === et_get_option( 'header_style', 'left' ) ? true : false;
-?>
+			$et_top_info_defined = $et_secondary_nav_items->top_info_defined;
 
-	<?php if ( $et_top_info_defined && ! $et_slide_header || is_customize_preview() ) : ?>
-		<div id="top-header"<?php echo $et_top_info_defined ? '' : 'style="display: none;"'; ?>>
-			<div class="container clearfix">
+			$et_slide_header = 'slide' === et_get_option( 'header_style', 'left' ) || 'fullscreen' === et_get_option( 'header_style', 'left' ) ? true : false;
+		?>
 
-			<?php if ( $et_contact_info_defined ) : ?>
+		<?php if ( $et_top_info_defined && ! $et_slide_header || is_customize_preview() ) : ?>
+			<div id="top-header"<?php echo $et_top_info_defined ? '' : 'style="display: none;"'; ?>>
+				<div class="container clearfix">
 
-				<div id="et-info">
-				<?php if ( '' !== ( $et_phone_number = et_get_option( 'phone_number' ) ) ) : ?>
-					<span id="et-info-phone"><?php echo et_sanitize_html_input_text( $et_phone_number ); ?></span>
-				<?php endif; ?>
+				<?php if ( $et_contact_info_defined ) : ?>
 
-				<?php if ( '' !== ( $et_email = et_get_option( 'header_email' ) ) ) : ?>
-					<a href="<?php echo esc_attr( 'mailto:' . $et_email ); ?>"><span id="et-info-email"><?php echo esc_html( $et_email ); ?></span></a>
-				<?php endif; ?>
+					<div id="et-info">
+					<?php if ( '' !== ( $et_phone_number = et_get_option( 'phone_number' ) ) ) : ?>
+						<span id="et-info-phone"><?php echo et_sanitize_html_input_text( $et_phone_number ); ?></span>
+					<?php endif; ?>
 
-				<?php
-				if ( true === $show_header_social_icons ) {
-					get_template_part( 'includes/social_icons', 'header' );
-				} ?>
-				</div> <!-- #et-info -->
+					<?php if ( '' !== ( $et_email = et_get_option( 'header_email' ) ) ) : ?>
+						<a href="<?php echo esc_attr( 'mailto:' . $et_email ); ?>"><span id="et-info-email"><?php echo esc_html( $et_email ); ?></span></a>
+					<?php endif; ?>
 
-			<?php endif; // true === $et_contact_info_defined ?>
-
-				<div id="et-secondary-menu">
-				<?php
-					if ( ! $et_contact_info_defined && true === $show_header_social_icons ) {
+					<?php
+					if ( true === $show_header_social_icons ) {
 						get_template_part( 'includes/social_icons', 'header' );
-					} else if ( $et_contact_info_defined && true === $show_header_social_icons ) {
-						ob_start();
+					} ?>
+					</div> <!-- #et-info -->
 
-						get_template_part( 'includes/social_icons', 'header' );
+				<?php endif; // true === $et_contact_info_defined ?>
 
-						$duplicate_social_icons = ob_get_contents();
+					<div id="et-secondary-menu">
+					<?php
+						if ( ! $et_contact_info_defined && true === $show_header_social_icons ) {
+							get_template_part( 'includes/social_icons', 'header' );
+						} else if ( $et_contact_info_defined && true === $show_header_social_icons ) {
+							ob_start();
 
-						ob_end_clean();
+							get_template_part( 'includes/social_icons', 'header' );
 
-						printf(
-							'<div class="et_duplicate_social_icons">
-								%1$s
-							</div>',
-							$duplicate_social_icons
-						);
-					}
+							$duplicate_social_icons = ob_get_contents();
 
-					if ( '' !== $et_secondary_nav ) {
-						echo $et_secondary_nav;
-					}
+							ob_end_clean();
 
-					et_show_cart_total();
-				?>
-				</div> <!-- #et-secondary-menu -->
+							printf(
+								'<div class="et_duplicate_social_icons">
+									%1$s
+								</div>',
+								$duplicate_social_icons
+							);
+						}
 
-			</div> <!-- .container -->
-		</div> <!-- #top-header -->
-	<?php endif; // true ==== $et_top_info_defined ?>
+						if ( '' !== $et_secondary_nav ) {
+							echo $et_secondary_nav;
+						}
+
+						et_show_cart_total();
+					?>
+					</div> <!-- #et-secondary-menu -->
+
+				</div> <!-- .container -->
+			</div> <!-- #top-header -->
+		<?php endif; // true ==== $et_top_info_defined ?>
 
 	<?php if ( $et_slide_header || is_customize_preview() ) : ?>
 		<div class="et_slide_in_menu_container">

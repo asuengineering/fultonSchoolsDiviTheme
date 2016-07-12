@@ -3,7 +3,7 @@
  Author:         Ira A. Fulton Schools of Engineering
  Author URI:     http://engineering.asu.edu/
  Template:       Divi
- Version:        1.5
+ Version:        1.6
  Description:    Arizona State University's Ira A. Fulton Schools of Engineering Child Theme for Divi (ASU Web Standards compliant)
  Wordpress Version: 4.4.2
 */
@@ -461,10 +461,15 @@ input[type="button"].btn-block {
 #asu-header {
     margin-left: auto;
     margin-right: auto;
-    max-width: 1170px;
+    max-width: 1080px;
     padding-top: 0px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#asu-header .container {
+    margin:0;
+    width:100%;
 }
 
 #page-container {
@@ -480,7 +485,7 @@ input[type="button"].btn-block {
 
 #et-top-navigation {
     float: none;
-    max-width: 1170px;
+    max-width: 1080px;
     margin: 0 auto;
     padding-left: 15px !important;
     padding-right: 15px !important;
@@ -677,7 +682,7 @@ address {
 }
 @media (min-width: 1200px) {
     #innovation-footer .footer-menu ul {
-        width: 1170px
+        width: 1080px
     }
 }
 @media only screen and (max-width: 930px) {
