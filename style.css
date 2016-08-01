@@ -787,8 +787,11 @@ address {
 
     /* Mega Menu Styling
     -------------------------------- */
-
     #top-menu li.mega-menu > ul > li > a:first-child {
+        font-weight:normal;
+        /* Undoes a really poorly written rule */
+    }
+    #top-menu li.mega-menu > ul > li.menu-item-has-children > a {
         font-weight:bold;
         border-bottom:1px solid #FFB310;
         font-size:14px;
