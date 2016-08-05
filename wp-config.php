@@ -137,20 +137,21 @@ define('WPLANG', '');
 /**
  * For developers: WordPress debugging mode.
  *
- * Change this to true to enable the display of notices during development.
- * It is strongly recommended that plugin and theme developers use WP_DEBUG
- * in their development environments.
- *
  * You may want to examine $_ENV['PANTHEON_ENVIRONMENT'] to set this to be
  * "true" in dev, but false in test and live.
  */
-if ( ! defined( 'WP_DEBUG' ) ) {
+
+if ( in_array( $_ENV['PANTHEON_ENVIRONMENT'], array( 'dev' ) ) && ! ( defined( 'WP_DEBUG' ) ) :
+    define('WP_DEBUG', true);
+else:
     define('WP_DEBUG', false);
-}
+endif;
+
+/** Fix for Pantheon & Contact Form 7. 
+More here: https://pantheon.io/docs/unsupported-modules-plugins/#wordpress-plugins */
+$_SERVER['SERVER_NAME'] = $_SERVER['HTTP_HOST'];
 
 /* That's all, stop editing! Happy Pressing. */
-
-
 
 
 /** Absolute path to the WordPress directory. */
