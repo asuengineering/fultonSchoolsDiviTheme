@@ -141,7 +141,7 @@ define('WPLANG', '');
  * "true" in dev, but false in test and live.
  */
 
-if ( in_array( $_ENV['PANTHEON_ENVIRONMENT'], array( 'dev' ) ) && ! ( defined( 'WP_DEBUG' ) ) :
+if ( in_array( $_ENV['PANTHEON_ENVIRONMENT'], array( 'dev' ) ) && ! ( defined( 'WP_DEBUG' ) ) ) :
     define('WP_DEBUG', true);
 else:
     define('WP_DEBUG', false);
