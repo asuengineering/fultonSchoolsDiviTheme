@@ -51,6 +51,7 @@ tinymce.PluginManager.add( 'wptadv', function( editor ) {
 		html = html.replace( new RegExp( '</(?:' + blocklist + ')>', 'gi' ), '$&\n' );
 		html = html.replace( new RegExp( '<br(?: [^>]*)?>', 'gi' ), '$&\n' );
 		html = html.replace( />\n\n</g, '>\n<' );
+		html = html.replace( /^<li/gm, '\t<li' );
 
 		return trim( html );
 	}
@@ -84,8 +85,15 @@ tinymce.PluginManager.add( 'wptadv', function( editor ) {
 		});
 
 		editor.on( 'beforeSetContent', function( event ) {
+			var wp = window.wp,
+				autop = wp && wp.editor && wp.editor.autop;
+
 			if ( event.load ) {
 				event.content = event.content.replace( /(^|[\r\n]+)\s*(https?:\/\/[^<>"\s]+)[ \u00A0\uFEFF]*([\r\n]+|$)/igm, '$1<p>$2</p>$3' );
+
+				if ( autop && event.content && event.content.indexOf( '\n' ) > -1 && ! /<p>/i.test( event.content ) ) {
+					event.content = autop( event.content );
+				}
 			}
 		}, true );
 	}

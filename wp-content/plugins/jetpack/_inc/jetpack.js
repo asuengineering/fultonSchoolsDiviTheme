@@ -18,7 +18,7 @@ jetpack = {
 	didDebug: false,
 
 	init: function() {
-		jetpack.numModules = jQuery( 'div.jetpack-module' ).not( '.placeholder' ).size();
+		jetpack.numModules = jQuery( 'div.jetpack-module' ).not( '.placeholder' ).length;
 		jetpack.container = jQuery( 'div.module-container' );
 
 		jetpack.level_modules();
@@ -63,7 +63,7 @@ jetpack = {
 		jQuery( '#jp-disconnect a' ).click( function() {
 			if ( confirm( jetpackL10n.ays_disconnect ) ) {
 				jQuery( this ).addClass( 'clicked' ).css( {
-					'background-image': 'url( ' + userSettings.url + 'wp-admin/images/wpspin_light.gif )',
+					'background-image': 'url( ' + userSettings.url + 'wp-includes/images/spinner-2x.gif )',
 					'background-position': '9px 5px',
 					'background-size': '16px 16px'
 				} ).unbind( 'click' ).click( function() { return false; } );
@@ -74,7 +74,7 @@ jetpack = {
 		jQuery( '#jp-unlink a' ).click( function() {
 			if ( confirm( jetpackL10n.ays_unlink ) ) {
 				jQuery( this ).css( {
-					'background-image': 'url( ' + userSettings.url + 'wp-admin/images/wpspin_light.gif )',
+					'background-image': 'url( ' + userSettings.url + 'wp-includes/images/spinner-2x.gif )',
 					'background-position': '9px 5px',
 					'background-size': '16px 16px'
 				} ).unbind( 'click' ).click( function() { return false; } );

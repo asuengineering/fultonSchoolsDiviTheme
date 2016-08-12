@@ -1,13 +1,13 @@
 === TinyMCE Advanced ===
 Contributors: azaozz
 Tags: wysiwyg, formatting, tinymce, write, editor
-Requires at least: 4.2
-Tested up to: 4.2
-Stable tag: 4.1.9
+Requires at least: 4.5
+Tested up to: 4.5
+Stable tag: 4.3.10
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Enables the advanced features of TinyMCE, the WordPress WYSIWYG editor. 
+Enables the advanced features of TinyMCE, the WordPress WYSIWYG editor.
 
 == Description ==
 
@@ -29,6 +29,36 @@ With this plugin you will also be able to enable the TinyMCE menu. It is a conve
 Best is to install directly from WordPress. If manual installation is required, please make sure that the plugin files are in a folder named "tinymce-advanced" (not two nested folders) in the WordPress plugins folder, usually "wp-content/plugins".
 
 == Changelog ==
+
+= 4.3.10.1 =
+* Fixed adding paragraph tags when loading posts that were saved before turning autop off.
+* Disabled the (new) inline toolbar for tables as it was overlapping the table in some cases.
+
+= 4.3.10 =
+* Updated for WordPress 4.5.1 and TinyMCE 4.3.10.
+* Fixed support for adding editor-style.css to themes that don't have it.
+
+= 4.3.8 =
+* Updated for WordPress 4.5 and TinyMCE 4.3.8.
+* Separated standard options and admin options.
+* Added settings that can disable the plugin for the main editor, other editors in wp-admin or editors on the front-end.
+* Korean translation by Josh Kim and Greek translation by Stathis Mellios.
+
+= 4.2.8 =
+* Updated for WordPress 4.4 and TinyMCE 4.2.8.
+* Japanese translation by Manabu Miwa.
+
+= 4.2.5 =
+* Updated for WordPress 4.3.1 and TinyMCE 4.2.5.
+* Fixed text domain and plugin headers.
+
+= 4.2.3.1 =
+* Fix error with removing the 'textpattern' plugin.
+
+= 4.2.3 =
+* Updated for WordPress 4.3 and TinyMCE 4.2.3.
+* Removed the 'textpattern' plugin as WordPress 4.3 includes similar functionality by default.
+* French translation by Nicolas Schneider.
 
 = 4.1.9 =
 * Updated for WordPress 4.2 and TinyMCE 4.1.9.
@@ -122,6 +152,12 @@ Includes an admin page for arranging the TinyMCE toolbar buttons, easy installat
 
 == Upgrade Notice ==
 
+= 4.2.3 =
+Updated for WordPress 4.3 and TinyMCE 4.2.3.
+
+= 4.1.9 =
+Updated for WordPress 4.2 and TinyMCE 4.1.9.
+
 = 4.1 =
 Includes the 'textpattern' plugin that supports some of the markdown syntax while typing, and the updated 'table' plugin that supports background and border color for tables.
 
@@ -149,7 +185,7 @@ Click the "Restore Default Settings" button on the plugin settings page and then
 
 = Other questions? More screenshots? =
 
-Please post on the support forum or visit the homepage for [TinyMCE Advanced](http://www.laptoptips.ca/projects/tinymce-advanced/). 
+Please post on the support forum or visit the homepage for [TinyMCE Advanced](http://www.laptoptips.ca/projects/tinymce-advanced/).
 
 
 == Screenshots ==

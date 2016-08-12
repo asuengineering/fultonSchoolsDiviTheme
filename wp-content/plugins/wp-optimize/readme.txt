@@ -1,10 +1,10 @@
-﻿=== WP-Optimize ===
+=== WP-Optimize ===
 Contributors: ruhanirabin
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LTCMF6JDX94QS
 Tags: comments, spam, optimize, database, revisions, users, posts, trash, schedule, automatic, clean, phpmyadmin, meta, postmeta, responsive, mobile
-Requires at least: 4
-Tested up to: 4.2
-Stable tag: 1.8.9.10
+Requires at least: 4.4
+Tested up to: 4.5
+Stable tag: 1.9.1
 License: GPLv2+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,7 +14,7 @@ Simple but effective plugin allows you to extensively clean up your WordPress da
 
 WP-Optimize is an extensive WordPress database cleanup and optimization tool. It doesn't require PhpMyAdmin to clean and optimize your database tables.
 
-Please show your support for this plugin by giving it [a rating](http://wordpress.org/support/view/plugin-reviews/wp-optimize?rate=5#postform) :)
+Please show your support for this plugin by giving it [a rating](https://wordpress.org/support/view/plugin-reviews/wp-optimize?rate=5#postform) :)
 
 Now hosted at [GitHub](https://github.com/ruhanirabin/WP-Optimize). 
 
@@ -43,7 +43,6 @@ Please join GitHub and collaborate.
 *   Apply native WordPress MySql optimize commands on your database tables without phpMyAdmin or any manual query.
 *   Display Database table statistics. Shows how much space can be optimized and how much space has been cleared.
 *   Enabled for Administrators only.
-*   E-mail notifications on automatic cleanup
 
 
 **All the potentially dangerous clean up options are marked RED.**
@@ -69,27 +68,11 @@ You will be credited inside the plugin screen and the plugin listing at WordPres
 
 
 **Translators are welcome to send their Translated Files to be included.**
-Existing translators should join [Translation Utility](http://wp-managed.com/projects/wp-optimize) to submit their translations.
+Existing translators should join [Translation Utility](https://translate.wordpress.org/projects/wp-plugins/wp-optimize) to submit their translations.
 
-You must have an account in order to edit translation - [Get the free account here](http://wp-managed.com/wp-login.php?action=register).
+You must have an account at WordPress.org in order to edit translation
 
-Once you get your account password in your email [Log in here to edit language](http://wp-managed.com/login?redirect_to=http%3A%2F%2Fwp-managed.com%2Fprojects%2Fwp-optimize)
-
-**WP-Optimize Translators:**
-
-*   Language de_DE: Rene Wolf - http://www.fluchtsportler.de
-*   Language fr_FR: Stéphane Benoit. - http://www.gnosticisme.com
-*   Language sl_SI: Tomi Sambrailo - http://www.refuzed.it/
-*   Language ka_GE: Givi Tabatadze - http://tagiweb.com
-*   Language zh_CN: Maie - http://maie.name
-*   Language es_ES: Navone Juan -  http://navonej.com.ar/
-*   Language sk_SK: Martin Šturcel-  http://sturcel.sk/martin
-*   Language nl_NL: Mathias Bosman -  http://www.mathiasbosman.be
-*   Language hu_HU: László Viktor - http://hunstart.hu/
-*   Language lt_LT: Bronisav Ciuzelis - http://internetiniusvetainiukurimas.com/
-
-** Some languages are removed from the above list, because translators did not update the languages for current version **
-[See a list of currently editable available languages at](http://wp-managed.com/projects/wp-optimize)
+[See a list of currently editable available languages at](https://translate.wordpress.org/projects/wp-plugins/wp-optimize)
 
 == Installation ==
 
@@ -152,6 +135,20 @@ Please check your database for corrupted tables. That can happen, usually your w
 5. Mobile View Bottom (Actual screen from Galaxy Note 3)
 
 == Changelog ==
+
+= 1.9.1 =
+* Ability to clean up Unused Post Meta, Comment Meta and Broken Relationship Data
+* Warning prompts for RED marked items and optimize button
+* Better transient options cleaning.
+* Language files update.
+* Various other fixes
+
+= 1.9 =
+* 27 Weeks retention option equivalent to 6 month
+* Compatibility update.
+* Language files update.
+* Removed email notifications, it doesn't work on many servers
+* Various other fixes
 
 = 1.8.9.10 =
 * Security Patch - Update your plugin.
@@ -291,7 +288,7 @@ Please check your database for corrupted tables. That can happen, usually your w
 * Enable/Disable weekly schedules of optimization. This is an EXPERIMENTAL feature. It may or may not work on all servers.
 
 = 0.9.4 =
-* Non Initialized variables fixes as of http://wordpress.org/support/topic/plugin-wp-optimize-errors-in-debug-mode?replies=2
+* Non Initialized variables fixes as of https://wordpress.org/support/topic/plugin-wp-optimize-errors-in-debug-mode?replies=2
 
 = 0.9.3 =
 * Removed security tools.
