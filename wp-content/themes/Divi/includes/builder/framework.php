@@ -199,13 +199,4 @@ function et_builder_load_framework() {
 }
 endif;
 
-if ( ! function_exists( 'et_pb_get_google_api_key' ) ) :
-function et_pb_get_google_api_key() {
-	$google_api_option = get_option( 'et_google_api_settings' );
-	$google_api_key = isset( $google_api_option['api_key'] ) ? $google_api_option['api_key'] : '';
-
-	return $google_api_key;
-}
-endif;
-
 et_builder_load_framework();

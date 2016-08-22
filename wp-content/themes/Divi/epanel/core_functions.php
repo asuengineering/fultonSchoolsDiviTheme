@@ -14,6 +14,8 @@ if ( ! function_exists( 'et_epanel_admin_js' ) ) {
 
 		$epanel_jsfolder = get_template_directory_uri() . '/epanel/js';
 
+		et_core_load_main_fonts();
+
 		wp_register_script( 'epanel_colorpicker', $epanel_jsfolder . '/colorpicker.js', array(), et_get_theme_version() );
 		wp_register_script( 'epanel_eye', $epanel_jsfolder . '/eye.js', array(), et_get_theme_version() );
 		wp_register_script( 'epanel_checkbox', $epanel_jsfolder . '/checkbox.js', array(), et_get_theme_version() );

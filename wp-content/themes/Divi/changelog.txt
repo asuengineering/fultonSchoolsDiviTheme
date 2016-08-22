@@ -1,3 +1,19 @@
+version 2.7.10 ( updated 08-18-2016 )
+- Fixed the issue with the Divi Builder not loading on some websites due to loading delay of TinyMCE in the latest version of WordPress.
+	* includes/builder/scripts/builder.js
+
+version 2.7.9 ( updated 08-15-2016 )
+- Fixed settings page font issues in WordPress 4.6
+	* core/admin/css/core.css
+	* core/functions.php
+	* epanel/core_functions.php
+	* epanel/css/panel.css
+	* includes/builder/functions.php
+	* includes/builder/layouts.php
+	* includes/builder/styles/notification_popup_styles.css
+	* includes/builder/styles/roles_style.css
+	* includes/builder/styles/style.css
+
 version 2.7.8 ( updated 06-25-2016 )
 - Added Google Maps API setting ( Google no longer support keyless access )
 	* options_divi.php

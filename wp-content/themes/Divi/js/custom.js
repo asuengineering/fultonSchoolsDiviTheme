@@ -29,7 +29,8 @@
 		$et_header_style_split = $('.et_header_style_split'),
 		$et_top_navigation = $('#et-top-navigation'),
 		$logo = $('#logo'),
-		$et_pb_first_row = $( 'body.et_pb_pagebuilder_layout .et_pb_section:first-child' );
+		$et_pb_first_row = $( 'body.et_pb_pagebuilder_layout .et_pb_section:first-child' ),
+		et_is_touch_device = 'ontouchstart' in window || navigator.maxTouchPoints;
 
 	$(document).ready( function(){
 		var $et_top_menu = $( 'ul.nav' ),
@@ -1062,23 +1063,25 @@
 		et_toggle_slide_menu();
 	});
 
-	// open slide menu on swipe left
-	$et_window.on( 'swipeleft', function( event ) {
-		var window_width = parseInt( $et_window.width() ),
-			swipe_start = parseInt( event.swipestart.coords[0] ); // horizontal coordinates of the swipe start
+	if ( et_is_touch_device ) {
+		// open slide menu on swipe left
+		$et_window.on( 'swipeleft', function( event ) {
+			var window_width = parseInt( $et_window.width() ),
+				swipe_start = parseInt( event.swipestart.coords[0] ); // horizontal coordinates of the swipe start
 
-		// if swipe started from the right edge of screen then open slide menu
-		if ( 30 >= window_width - swipe_start ) {
-			et_toggle_slide_menu( 'open' );
-		}
-	} );
+			// if swipe started from the right edge of screen then open slide menu
+			if ( 30 >= window_width - swipe_start ) {
+				et_toggle_slide_menu( 'open' );
+			}
+		} );
 
-	// close slide menu on swipe right
-	$et_window.on( 'swiperight', function( event ){
-		if ( $( 'body' ).hasClass( 'et_pb_slide_menu_active' ) ) {
-			et_toggle_slide_menu( 'close' );
-		}
-	});
+		// close slide menu on swipe right
+		$et_window.on( 'swiperight', function( event ){
+			if ( $( 'body' ).hasClass( 'et_pb_slide_menu_active' ) ) {
+				et_toggle_slide_menu( 'close' );
+			}
+		});
+	}
 
 	$( '#page-container' ).on( 'click', '.et_toggle_fullscreen_menu', function() {
 		var $menu_container = $( '.et_header_style_fullscreen .et_slide_in_menu_container' ),

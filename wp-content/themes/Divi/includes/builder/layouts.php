@@ -198,6 +198,8 @@ add_action( 'admin_init', 'et_update_layouts_built_for_post_types' );
 function et_builder_library_custom_styles() {
 	global $typenow;
 
+	et_core_load_main_fonts();
+
 	wp_enqueue_style( 'et-builder-notification-popup-styles', ET_BUILDER_URI . '/styles/notification_popup_styles.css' );
 
 	if ( 'et_pb_layout' === $typenow ) {

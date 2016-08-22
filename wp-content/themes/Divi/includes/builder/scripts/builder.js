@@ -2,11 +2,12 @@ var ET_PageBuilder = ET_PageBuilder || {};
 
 window.wp = window.wp || {};
 
-window.et_builder_version = '2.7.8';
+window.et_builder_version = '2.7.10';
 
 ( function($) {
 	var et_error_modal_shown = window.et_error_modal_shown,
-		et_is_loading_missing_modules = false;
+		et_is_loading_missing_modules = false,
+		et_pb_bulder_loading_attempts = 0;
 
 	function et_builder_load_backbone_templates( reload_template ) {
 
@@ -6532,6 +6533,27 @@ window.et_builder_version = '2.7.8';
 					var fix_shortcodes = true,
 						content = '';
 
+					// check whether the tinyMCE container is loaded already if not - try again.
+					if ( typeof window.tinyMCE !== 'undefined' && window.tinyMCE.get( 'content' ) && ! window.tinyMCE.get( 'content' ).isHidden() && ! $( 'iframe#content_ifr' ).length ) {
+						et_pb_bulder_loading_attempts++;
+
+						//show failure modal after 30 unsuccessful attempts
+						if ( 30 < et_pb_bulder_loading_attempts ) {
+							var $failure_notice_template = $( '#et-builder-failure-notice-template' );
+
+							ET_PageBuilder_Events.trigger( 'et-pb-loading:ended' );
+
+							$( '#et_pb_main_container' ).removeClass( 'et_pb_loading_animation' );
+
+							$( 'body' ).addClass( 'et_pb_stop_scroll' ).append( $failure_notice_template.html() );
+
+							return;
+						}
+
+						this_el.maybeGenerateInitialLayout();
+						return;
+					}
+
 					/*
 					 * Visual editor adds paragraph tags around shortcodes,
 					 * it causes &nbsp; to be inserted into a module content area
@@ -6575,7 +6597,7 @@ window.et_builder_version = '2.7.8';
 					this_el.listenTo( this_el.collection, 'change reset add', _.debounce( this_el.saveAsShortcode, 128 ) );
 
 					ET_PageBuilder_AB_Testing.update();
-				}, 1000 );
+				}, 500 );
 			},
 
 			wp_regexp_not_global : _.memoize( function( tag ) {

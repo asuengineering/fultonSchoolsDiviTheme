@@ -2,7 +2,7 @@
 
 if ( ! defined( 'ET_BUILDER_PRODUCT_VERSION' ) ) {
 	// Note, when this is updated, you must also update corresponding version in builder.js: `window.et_builder_version`
-	define( 'ET_BUILDER_PRODUCT_VERSION', '2.7.8' );
+	define( 'ET_BUILDER_PRODUCT_VERSION', '2.7.10' );
 }
 
 if ( ! defined( 'ET_BUILDER_VERSION' ) ) {
@@ -1772,6 +1772,8 @@ function et_pb_add_builder_page_js_css(){
 			),
 		),
 	) ) );
+
+	et_core_load_main_fonts();
 
 	wp_enqueue_style( 'et_pb_admin_css', ET_BUILDER_URI .'/styles/style.css', array(), ET_BUILDER_VERSION );
 	wp_enqueue_style( 'et_pb_admin_date_css', ET_BUILDER_URI . '/styles/jquery-ui-1.10.4.custom.css', array(), ET_BUILDER_VERSION );
@@ -4786,6 +4788,7 @@ function et_pb_load_roles_admin( $hook ) {
 		return;
 	}
 
+	et_core_load_main_fonts();
 	wp_enqueue_style( 'builder-roles-editor-styles', ET_BUILDER_URI . '/styles/roles_style.css' );
 	wp_enqueue_script( 'builder-roles-editor-scripts', ET_BUILDER_URI . '/scripts/roles_admin.js', array( 'jquery', 'et_pb_admin_global_js' ), ET_BUILDER_VERSION, true );
 	wp_localize_script( 'builder-roles-editor-scripts', 'et_pb_roles_options', array(

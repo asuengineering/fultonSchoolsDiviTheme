@@ -93,6 +93,10 @@
 /**
  * Main Wrappers
  */
+#panel-wrap, #custom-lbox {
+	font-family: 'Open Sans', sans-serif;
+}
+
 #wrapper {
 	margin: 35px 50px 30px 30px;
 }
@@ -116,7 +120,7 @@
 }
 
 h1#epanel-title {
-	font-weight: 100;
+	font-weight: 300;
 	font-size: 22px;
 	color: rgb(255, 255, 255);
 	background-color: rgb(108, 46, 185);
@@ -204,7 +208,7 @@ h1#epanel-title {
 	display: inline-block;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 18px;
-	font-weight: 500;
+	font-weight: 400;
 }
 
 #epanel-mainmenu a:hover,
@@ -522,7 +526,7 @@ input.checkbox.yes_no_button {
 	float: left;
 	width: 50%;
 	text-align: center;
-	font-weight: bold;
+	font-weight: 600;
 	text-transform: uppercase;
 	-moz-transition: all 0.3s;
 	-webkit-transition: all 0.3s;
@@ -593,7 +597,7 @@ input.checkbox.yes_no_button {
 	display: block;
 	position: absolute;
 	text-shadow: none !important;
-	font-weight: 100 !important;
+	font-weight: 300 !important;
 }
 
 .save-button {
@@ -609,7 +613,7 @@ input.checkbox.yes_no_button {
 	border: none;
 	padding: 0 20px 0 58px;
 	font-size: 18px;
-	font-weight: 100;
+	font-weight: 300;
 	height: 53px;
 	line-height: 53px;
 	display: inline-block;
@@ -650,7 +654,7 @@ input.checkbox.yes_no_button {
 }
 
 .reset-popup-header {
-	font-weight: 100;
+	font-weight: 300;
 	font-size: 22px;
 	color: rgb(255, 255, 255);
 	background-color: rgb(108, 46, 185);
@@ -719,7 +723,7 @@ input.checkbox.yes_no_button {
 	width: 50%;
 	border: none;
 	font-family: 'Open Sans', sans-serif;
-	font-weight: bold;
+	font-weight: 600;
 	box-sizing: border-box;
 	text-align: center;
 	line-height: 68px;
@@ -761,7 +765,7 @@ input.checkbox.yes_no_button {
 }
 
 .box-desc-top {
-	font-weight: 100;
+	font-weight: 300;
 	font-size: 22px;
 	color: rgb(255, 255, 255);
 	background-color: rgb(108, 46, 185);
@@ -1244,13 +1248,13 @@ left: 0px;
 .navigationTabs li a.active { background-color: #fff; border: 1px solid #ccc; border-bottom: 0px solid; }
 .tabsContent { border: 1px solid #ccc; border-top: 0px solid; width: 698px; overflow: hidden; }
 .tab { padding: 16px; display: none; }
-.tab h2 { font-weight: bold; font-size: 16px; }
-.tab h3 {	font-weight: bold; font-size: 14px; margin-top: 20px; }
+.tab h2 { font-weight: 600; font-size: 16px; }
+.tab h3 {	font-weight: 600; font-size: 14px; margin-top: 20px; }
 .tab p { margin-top: 16px; clear: both; }
 .tab ul { margin-top: 16px; list-style: disc; }
 .tab li { margin: 10px 0 0 35px; }
 .tab a { color: #8FB0CF; }
-.tab strong { font-weight: bold; }
+.tab strong { font-weight: 600; }
 .tab pre { font-size: 11px; margin-top: 20px; width: 668px; overflow: auto; clear: both; }
 .tab table { width: 100%; }
 .tab table td { padding: 6px 10px 6px 0; vertical-align: top; }
