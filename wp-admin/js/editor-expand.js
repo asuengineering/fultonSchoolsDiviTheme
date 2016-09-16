@@ -53,6 +53,50 @@
 				sideSortablesHeight: 0
 			};
 
+<<<<<<< HEAD
+=======
+		var shrinkTextarea = window._.throttle( function() {
+			var x = window.scrollX || document.documentElement.scrollLeft;
+			var y = window.scrollY || document.documentElement.scrollTop;
+			var height = parseInt( textEditor.style.height, 10 );
+
+			textEditor.style.height = autoresizeMinHeight + 'px';
+
+			if ( textEditor.scrollHeight > autoresizeMinHeight ) {
+				textEditor.style.height = textEditor.scrollHeight + 'px';
+			}
+
+			if ( typeof x !== 'undefined' ) {
+				window.scrollTo( x, y );
+			}
+
+			if ( textEditor.scrollHeight < height ) {
+				adjust();
+			}
+		}, 300 );
+
+		function textEditorResize() {
+			var length = textEditor.value.length;
+
+			if ( mceEditor && ! mceEditor.isHidden() ) {
+				return;
+			}
+
+			if ( ! mceEditor && initialMode === 'tinymce' ) {
+				return;
+			}
+
+			if ( length < oldTextLength ) {
+				shrinkTextarea();
+			} else if ( parseInt( textEditor.style.height, 10 ) < textEditor.scrollHeight ) {
+				textEditor.style.height = Math.ceil( textEditor.scrollHeight ) + 'px';
+				adjust();
+			}
+
+			oldTextLength = length;
+		}
+
+>>>>>>> cccdd26e7c511bebbd40b23e6756056f8eb7bd3d
 		function getHeights() {
 			var windowWidth = $window.width();
 
@@ -75,6 +119,7 @@
 			}
 		}
 
+<<<<<<< HEAD
 		function textEditorResize() {
 			if ( mceEditor && ! mceEditor.isHidden() ) {
 				return;
@@ -112,6 +157,8 @@
 			oldTextLength = length;
 		}
 
+=======
+>>>>>>> cccdd26e7c511bebbd40b23e6756056f8eb7bd3d
 		// We need to wait for TinyMCE to initialize.
 		$document.on( 'tinymce-editor-init.editor-expand', function( event, editor ) {
 			var VK = window.tinymce.util.VK,

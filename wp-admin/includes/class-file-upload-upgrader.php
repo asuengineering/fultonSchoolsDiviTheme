@@ -100,8 +100,17 @@ class File_Upload_Upgrader {
 			if ( ! ( ( $uploads = wp_upload_dir() ) && false === $uploads['error'] ) )
 				wp_die( $uploads['error'] );
 
+<<<<<<< HEAD
 			$this->filename = $_GET[$urlholder];
 			$this->package = $uploads['basedir'] . '/' . $this->filename;
+=======
+			$this->filename = sanitize_file_name( $_GET[ $urlholder ] );
+			$this->package = $uploads['basedir'] . '/' . $this->filename;
+
+			if ( 0 !== strpos( realpath( $this->package ), realpath( $uploads['basedir'] ) ) ) {
+				wp_die( __( 'Please select a file' ) );
+			}
+>>>>>>> cccdd26e7c511bebbd40b23e6756056f8eb7bd3d
 		}
 	}
 

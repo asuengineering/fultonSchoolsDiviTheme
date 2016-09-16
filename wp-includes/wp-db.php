@@ -734,6 +734,9 @@ class wpdb {
 	 * @since 3.1.0
 	 */
 	public function init_charset() {
+		$charset = '';
+		$collate = '';
+
 		if ( function_exists('is_multisite') && is_multisite() ) {
 			$charset = 'utf8';
 			if ( defined( 'DB_COLLATE' ) && DB_COLLATE ) {
@@ -774,6 +777,7 @@ class wpdb {
 
 		if ( 'utf8' === $charset && $this->has_cap( 'utf8mb4' ) ) {
 			$charset = 'utf8mb4';
+<<<<<<< HEAD
 		}
 
 		if ( 'utf8mb4' === $charset ) {
@@ -790,6 +794,24 @@ class wpdb {
 			$collate = 'utf8mb4_unicode_520_ci';
 		}
 
+=======
+		}
+
+		if ( 'utf8mb4' === $charset ) {
+			// _general_ is outdated, so we can upgrade it to _unicode_, instead.
+			if ( ! $collate || 'utf8_general_ci' === $collate ) {
+				$collate = 'utf8mb4_unicode_ci';
+			} else {
+				$collate = str_replace( 'utf8_', 'utf8mb4_', $collate );
+			}
+		}
+
+		// _unicode_520_ is a better collation, we should use that when it's available.
+		if ( $this->has_cap( 'utf8mb4_520' ) && 'utf8mb4_unicode_ci' === $collate ) {
+			$collate = 'utf8mb4_unicode_520_ci';
+		}
+
+>>>>>>> cccdd26e7c511bebbd40b23e6756056f8eb7bd3d
 		return compact( 'charset', 'collate' );
 	}
 
@@ -808,9 +830,22 @@ class wpdb {
 		if ( ! isset( $collate ) )
 			$collate = $this->collate;
 		if ( $this->has_cap( 'collation' ) && ! empty( $charset ) ) {
+			$set_charset_succeeded = true;
+
 			if ( $this->use_mysqli ) {
 				if ( function_exists( 'mysqli_set_charset' ) && $this->has_cap( 'set_charset' ) ) {
+<<<<<<< HEAD
 					mysqli_set_charset( $dbh, $charset );
+=======
+					$set_charset_succeeded = mysqli_set_charset( $dbh, $charset );
+				}
+
+				if ( $set_charset_succeeded ) {
+					$query = $this->prepare( 'SET NAMES %s', $charset );
+					if ( ! empty( $collate ) )
+						$query .= $this->prepare( ' COLLATE %s', $collate );
+					mysqli_query( $dbh, $query );
+>>>>>>> cccdd26e7c511bebbd40b23e6756056f8eb7bd3d
 				}
 				$query = $this->prepare( 'SET NAMES %s', $charset );
 				if ( ! empty( $collate ) )
@@ -818,7 +853,17 @@ class wpdb {
 				mysqli_query( $dbh, $query );
 			} else {
 				if ( function_exists( 'mysql_set_charset' ) && $this->has_cap( 'set_charset' ) ) {
+<<<<<<< HEAD
 					mysql_set_charset( $charset, $dbh );
+=======
+					$set_charset_succeeded = mysql_set_charset( $charset, $dbh );
+				}
+				if ( $set_charset_succeeded ) {
+					$query = $this->prepare( 'SET NAMES %s', $charset );
+					if ( ! empty( $collate ) )
+						$query .= $this->prepare( ' COLLATE %s', $collate );
+					mysql_query( $query, $dbh );
+>>>>>>> cccdd26e7c511bebbd40b23e6756056f8eb7bd3d
 				}
 				$query = $this->prepare( 'SET NAMES %s', $charset );
 				if ( ! empty( $collate ) )

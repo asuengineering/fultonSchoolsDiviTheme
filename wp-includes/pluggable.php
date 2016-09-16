@@ -349,7 +349,11 @@ function wp_mail( $to, $subject, $message, $headers = '', $attachments = array()
 	 */
 	$from_name = apply_filters( 'wp_mail_from_name', $from_name );
 
+<<<<<<< HEAD
 	$phpmailer->setFrom( $from_email, $from_name );
+=======
+	$phpmailer->setFrom( $from_email, $from_name, false );
+>>>>>>> cccdd26e7c511bebbd40b23e6756056f8eb7bd3d
 
 	// Set destination addresses
 	if ( !is_array( $to ) )
