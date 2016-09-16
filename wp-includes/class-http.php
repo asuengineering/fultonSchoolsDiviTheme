@@ -361,64 +361,6 @@ class WP_Http {
 				$options['proxy']->pass = $proxy->password();
 			}
 		}
-<<<<<<< HEAD
-
-		try {
-			$requests_response = Requests::request( $url, $headers, $data, $type, $options );
-
-			// Convert the response into an array
-			$http_response = new WP_HTTP_Requests_Response( $requests_response, $r['filename'] );
-			$response = $http_response->to_array();
-
-			// Add the original object to the array.
-			$response['http_response'] = $http_response;
-		}
-		catch ( Requests_Exception $e ) {
-			$response = new WP_Error( 'http_request_failed', $e->getMessage() );
-		}
-
-		/**
-		 * Fires after an HTTP API response is received and before the response is returned.
-		 *
-		 * @since 2.8.0
-		 *
-		 * @param array|WP_Error $response HTTP response or WP_Error object.
-		 * @param string         $context  Context under which the hook is fired.
-		 * @param string         $class    HTTP transport used.
-		 * @param array          $args     HTTP request arguments.
-		 * @param string         $url      The request URL.
-		 */
-		do_action( 'http_api_debug', $response, 'response', 'Requests', $r, $url );
-		if ( is_wp_error( $response ) ) {
-			return $response;
-		}
-
-		if ( ! $r['blocking'] ) {
-			return array(
-				'headers' => array(),
-				'body' => '',
-				'response' => array(
-					'code' => false,
-					'message' => false,
-				),
-				'cookies' => array(),
-				'http_response' => null,
-			);
-		}
-
-		/**
-		 * Filters the HTTP API response immediately before the response is returned.
-		 *
-		 * @since 2.9.0
-		 *
-		 * @param array  $response HTTP response.
-		 * @param array  $r        HTTP request arguments.
-		 * @param string $url      The request URL.
-		 */
-		return apply_filters( 'http_response', $response, $r, $url );
-	}
-
-=======
 
 		// Work around a bug in Requests when the path starts with // See https://github.com/rmccue/Requests/issues/231
 		$url = preg_replace( '!^(\w+://[^/]+)//(.*)$!i', '$1/$2', $url );
@@ -478,7 +420,6 @@ class WP_Http {
 		return apply_filters( 'http_response', $response, $r, $url );
 	}
 
->>>>>>> cccdd26e7c511bebbd40b23e6756056f8eb7bd3d
 	/**
 	 * Normalizes cookies for using in Requests.
 	 *
@@ -495,11 +436,7 @@ class WP_Http {
 		foreach ( $cookies as $name => $value ) {
 			if ( $value instanceof WP_Http_Cookie ) {
 				$cookie_jar[ $value->name ] = new Requests_Cookie( $value->name, $value->value, $value->get_attributes() );
-<<<<<<< HEAD
-			} elseif ( is_string( $value ) ) {
-=======
 			} elseif ( is_scalar( $value ) ) {
->>>>>>> cccdd26e7c511bebbd40b23e6756056f8eb7bd3d
 				$cookie_jar[ $name ] = new Requests_Cookie( $name, $value );
 			}
 		}

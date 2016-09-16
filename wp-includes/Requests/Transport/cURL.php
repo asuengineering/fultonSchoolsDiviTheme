@@ -347,11 +347,7 @@ class Requests_Transport_cURL implements Requests_Transport {
 			default:
 				curl_setopt($this->handle, CURLOPT_CUSTOMREQUEST, $options['type']);
 				if (!empty($data)) {
-<<<<<<< HEAD
-					curl_setopt( $this->handle, CURLOPT_POSTFIELDS, $data );
-=======
 					curl_setopt($this->handle, CURLOPT_POSTFIELDS, $data);
->>>>>>> cccdd26e7c511bebbd40b23e6756056f8eb7bd3d
 				}
 		}
 
@@ -528,11 +524,7 @@ class Requests_Transport_cURL implements Requests_Transport {
 	 * @return boolean True if the transport is valid, false otherwise.
 	 */
 	public static function test($capabilities = array()) {
-<<<<<<< HEAD
-		if (!function_exists('curl_init') && !function_exists('curl_exec')) {
-=======
 		if (!function_exists('curl_init') || !function_exists('curl_exec')) {
->>>>>>> cccdd26e7c511bebbd40b23e6756056f8eb7bd3d
 			return false;
 		}
 

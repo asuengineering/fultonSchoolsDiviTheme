@@ -53,8 +53,6 @@
 				sideSortablesHeight: 0
 			};
 
-<<<<<<< HEAD
-=======
 		var shrinkTextarea = window._.throttle( function() {
 			var x = window.scrollX || document.documentElement.scrollLeft;
 			var y = window.scrollY || document.documentElement.scrollTop;
@@ -96,7 +94,6 @@
 			oldTextLength = length;
 		}
 
->>>>>>> cccdd26e7c511bebbd40b23e6756056f8eb7bd3d
 		function getHeights() {
 			var windowWidth = $window.width();
 
@@ -119,46 +116,6 @@
 			}
 		}
 
-<<<<<<< HEAD
-		function textEditorResize() {
-			if ( mceEditor && ! mceEditor.isHidden() ) {
-				return;
-			}
-
-			if ( ! mceEditor && initialMode === 'tinymce' ) {
-				return;
-			}
-
-			var length = textEditor.value.length;
-			var height = parseInt( textEditor.style.height, 10 );
-			var top = window.scrollTop;
-
-			if ( length < oldTextLength ) {
-				// textEditor.scrollHeight is not adjusted until the next line.
-				textEditor.style.height = 'auto';
-
-				if ( textEditor.scrollHeight > autoresizeMinHeight ) {
-					textEditor.style.height = textEditor.scrollHeight + 'px';
-				} else {
-					textEditor.style.height = autoresizeMinHeight + 'px';
-				}
-
-				// Prevent scroll-jumping in Firefox and IE.
-				window.scrollTop = top;
-
-				if ( textEditor.scrollHeight < height ) {
-					adjust();
-				}
-			} else if ( height < textEditor.scrollHeight ) {
-				textEditor.style.height = textEditor.scrollHeight + 'px';
-				adjust();
-			}
-
-			oldTextLength = length;
-		}
-
-=======
->>>>>>> cccdd26e7c511bebbd40b23e6756056f8eb7bd3d
 		// We need to wait for TinyMCE to initialize.
 		$document.on( 'tinymce-editor-init.editor-expand', function( event, editor ) {
 			var VK = window.tinymce.util.VK,
