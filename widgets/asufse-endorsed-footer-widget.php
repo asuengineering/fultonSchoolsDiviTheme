@@ -53,12 +53,12 @@
     // Define the form to gather the data on the admin side.
     public function form( $instance ) {
 
-        $summarytext = esc_textarea( $instance['summarytext'] );
-        $parentorg = esc_textarea( $instance['parentorg'] );
-        $contactLink = esc_url( $instance['contactLink'] );
-        $phone = esc_attr( $instance['phone'] );
-        $fax = esc_attr( $instance['fax'] );
-        $contributeLink = esc_url( $instance['contributeLink'] );
+        $summarytext = isset( $instance['summarytext'] ) ? esc_textarea( $instance['summarytext'] ) : '';
+        $parentorg = isset($instance['parentorg']) ? esc_textarea( $instance['parentorg'] ) : '';
+        $contactLink = isset($instance['contactLink']) ? esc_url( $instance['contactLink'] ) : '';
+        $phone = isset($instance['phone']) ? esc_url( $instance['phone'] ) : '';
+        $fax = isset($instance['fax']) ? esc_url( $instance['fax']) : '';
+        $contributeLink = isset($instance['contributeLink']) ? esc_url($instance['contributeLink']) : '';
 
         ?>
 

@@ -119,8 +119,7 @@
             </li>
         <?php endif; ?>
 
-        <?php if( 'on' == $instance[ 'rss' ] ) : ?>
-            <?php
+        <?php
             $et_rss_url = '' !== et_get_option( 'divi_rss_url' )
                 ? et_get_option( 'divi_rss_url' )
                 : get_bloginfo( 'rss2_url' );
@@ -131,7 +130,6 @@
                     <span><?php esc_html_e( 'RSS', 'Divi' ); ?></span>
                 </a>
             </li>
-        <?php endif; ?>
 
         </ul>
 
@@ -145,18 +143,17 @@
     // Define the form to gather the data on the admin side.
     public function form( $instance ) {
 
-        $facebook= esc_url( $instance['facebook'] );
-        $twitter= esc_url( $instance['twitter'] );
-        $linkedin= esc_url( $instance['linkedin'] );
-        $youtube= esc_url( $instance['youtube'] );
-        $vimeo= esc_url( $instance['vimeo'] );
-        $instagram= esc_url( $instance['instagram'] );
-        $flikr= esc_url( $instance['flikr'] );
-        $pinterest= esc_url( $instance['pinterest'] );
-        $googleplus= esc_url( $instance['googleplus'] );
-        $github= esc_url( $instance['github'] );
-        $rss= esc_url( $instance['rss'] );
-        $contributeLink= esc_url( $instance['contributeLink'] );
+        $facebook = isset($instance['facebook']) ? esc_url($instance['facebook']) : '';
+        $twitter = isset($instance['twitter']) ? esc_url($instance['twitter']) : '';
+        $linkedin = isset($instance['linkedin']) ? esc_url($instance['linkedin']) : '';
+        $youtube = isset($instance['youtube']) ? esc_url($instance['youtube']) : '';
+        $vimeo = isset($instance['vimeo'] ) ? esc_url($instance['vimeo'] ) : '';
+        $instagram = isset($instance['instagram']) ? esc_url($instance['instagram']) : '';
+        $flikr = isset($instance['flikr']) ? esc_url($instance['flikr']) : '';
+        $pinterest = isset($instance['pinterest']) ? esc_url($instance['pinterest']) : '';
+        $googleplus = isset($instance['googleplus']) ? esc_url($instance['googleplus']) : '';
+        $github = isset($instance['github']) ? esc_url($instance['github']) : '';
+        $contributeLink = isset($instance['contributeLink']) ? esc_url($instance['contributeLink']) : '';
 
         ?>  
 
@@ -208,11 +205,6 @@
         <p>
           <label for="<?php echo $this->get_field_id('github'); ?>"><?php _e('GitHub'); ?></label> 
           <input class="widefat" id="<?php echo $this->get_field_id('github'); ?>" name="<?php echo $this->get_field_name('github'); ?>" type="text" value="<?php echo $github; ?>" />
-        </p>
-
-        <p>
-            <input class="checkbox" type="checkbox" <?php checked( $instance[ 'rss' ], 'on' ); ?> id="<?php echo $this->get_field_id( 'rss' ); ?>" name="<?php echo $this->get_field_name( 'rss' ); ?>" /> 
-            <label for="<?php echo $this->get_field_id( 'rss' ); ?>">Include an RSS link?</label>
         </p>
 
         <p>
