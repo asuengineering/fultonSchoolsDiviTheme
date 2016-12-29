@@ -22,11 +22,21 @@ function asu_display_social_media_editor() {
 	?>
 		<div class="wrap" id="asu_social_media_editor">
 			<h2>Additional Social Media Icons</h2>
+			
+			<div style="background-color:#e0e0e0; padding:.5em 1.5em;">
+				<h3><strong style="color:red;">WARNING: </strong>The content on this page has been depreciated as of the release of FSDT 1.8.</h3>
+				<p>Social media information entered here will continue to be embedded within the original (depreciated) <strong>ASU Footer Info</strong> widget. But the widget and this page will be deactivated in a forthcomming release of the FSDT.</p>
+				<p>For a better user experience, please add the new <strong>ASU Engineering Footer Widget</strong> and the new <strong>ASU Social Media Icons</strong> widget to the footer instead.</p>
+				<ul style="list-style-type: disc; padding-left:25px;">
+					<li>The URL's for most popular social media channels can be added directly to the widget, instead of keeping them in a separate page.</li>
+					<li>Using the new <strong>ASU Social Media Icons</strong> widget will also mean that Facebook, Twitter, RSS and Google+ information entered into the native <a href="wp-admin/admin.php?page=et_divi_options">Divi Theme Options page</a> will no longer be rendered in the theme directly.</li>
+				</ul>
+				<p>If you have any questions about the approach outlined above, please send a message to <a href="mailto:steve.ryan@asu.edu">Steve Ryan</a> with a request to keep this feature activated. Otherwise, it will be deleted in a future release of the FSDT. </p>
+			</div>
+
 			<form method="post" action="admin.php?page=asu_social_media_editor" enctype="multipart/form-data">
 				<input type="hidden" name="action" value="asu_social_media_update">
 				<?php wp_nonce_field('asu_display_social_media_editor', 'asu_social_media_editor'); ?>
-				<h2>Standard</h2>
-				<p> These are fairly standard form input fields.</p>
 				<table class="form-table">
 					<tbody>
 					

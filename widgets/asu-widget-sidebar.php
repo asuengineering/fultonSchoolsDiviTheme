@@ -1,9 +1,9 @@
 <?php class ASU_Sidebar_Widget extends WP_Widget
 {
     function __construct(){
-        $widget_ops = array( 'description' => esc_html__( 'Displays Fulton Sidebar Widget', 'ASU' ) );
+        $widget_ops = array( 'description' => esc_html__( 'Displays something called the "Fulton Sidebar Widget." Depreciated as of FSDT 1.8.', 'ASU' ) );
         $control_ops = array( 'width' => 300, 'height' => 300 );
-        parent::__construct( false, $name = esc_html__( 'Fulton Sidebar Widget', 'ASU' ), $widget_ops, $control_ops );
+        parent::__construct( false, $name = esc_html__( '(Depreciated) ASU Fulton Sidebar Widget', 'ASU' ), $widget_ops, $control_ops );
     }
 
     function widget( $args, $instance ){

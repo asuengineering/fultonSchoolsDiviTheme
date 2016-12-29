@@ -13,6 +13,8 @@ include(ASU_CHILD_THEME_DIRECTORY . '/includes/asu-child-shortcodes.php');
 /* include widgets */
 include(ASU_CHILD_THEME_DIRECTORY . '/widgets/asu-widget-sidebar.php');
 include(ASU_CHILD_THEME_DIRECTORY . '/widgets/asu-widget-footer.php');
+include(ASU_CHILD_THEME_DIRECTORY . '/widgets/asufse-endorsed-footer-widget.php');
+include(ASU_CHILD_THEME_DIRECTORY . '/widgets/asufse-socialicons-footer-widget.php');
 
 /* --------------------- 
 Register, enqueue scripts, execute action */
@@ -26,6 +28,7 @@ function fsdt_enqueue_scripts() {
     wp_register_style( 'roboto-font', 'https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic', array(), '1' );
     
     wp_register_script( 'functions', get_stylesheet_directory_uri() . '/js/functions.js', array(), false, true );
+    wp_register_script( 'fse-functions', get_stylesheet_directory_uri() . '/js/fse-functions.js', array(), false, true );
     wp_register_script( 'asu-header', get_stylesheet_directory_uri() . '/assets/asu-header/js/asu-header.min.js', array() , '4.0', true );
     wp_register_script( 'asu-header-config', get_stylesheet_directory_uri() . '/assets/asu-header/js/asu-header-config.js', array( 'asu-header' ) , '4.0', true );
     
@@ -35,6 +38,7 @@ function fsdt_enqueue_scripts() {
     wp_enqueue_style( 'roboto-font' );
     
     wp_enqueue_script( 'functions' );
+    wp_enqueue_script( 'fse-functions' );
     wp_enqueue_script( 'asu-header' );
     wp_enqueue_script( 'asu-header-config' );
 
@@ -101,7 +105,7 @@ function asu_theme_activate () {
     add_option( 'asu_social_flikr', '' );
 
     // Create Menu
-    $menu_name = 'Main Nav';
+    $menu_name = 'Fulton Schools Default Menu';
     $menu_exists = wp_get_nav_menu_object( $menu_name );
 
     // If it doesn't exist, let's create it.
@@ -112,45 +116,45 @@ function asu_theme_activate () {
         $top_level_menu_id = wp_update_nav_menu_item($menu_id, 0, array(
             'menu-item-title' =>  __('Fulton Schools'),
             'menu-item-url' => home_url( '#' ),
-            'menu-item-status' => 'publish'));
+            'menu-item-status' => 'publish')
+        );
 
         // create sub level menu items
         wp_update_nav_menu_item($menu_id, 0, array(
             'menu-item-parent-id' => $top_level_menu_id,
             'menu-item-title' =>  __('Get to Know the Fulton Schools'),
-            'menu-item-url' => home_url( 'https://engineering.asu.edu/factbook/' ),
+            'menu-item-url' => 'https://engineering.asu.edu/factbook/',
             'menu-item-status' => 'publish'));
 
         wp_update_nav_menu_item($menu_id, 0, array(
             'menu-item-parent-id' => $top_level_menu_id,
             'menu-item-title' =>  __('Faculty Hiring'),
-            'menu-item-url' => home_url( 'https://engineering.asu.edu/hiring/' ),
+            'menu-item-url' => 'https://engineering.asu.edu/hiring/',
             'menu-item-status' => 'publish'));
 
         wp_update_nav_menu_item($menu_id, 0, array(
             'menu-item-parent-id' => $top_level_menu_id,
             'menu-item-title' =>  __('Fulton Schools Research'),
-            'menu-item-url' => home_url( 'https://engineering.asu.edu/research/' ),
+            'menu-item-url' => 'https://engineering.asu.edu/research/',
             'menu-item-status' => 'publish'));
 
         wp_update_nav_menu_item($menu_id, 0, array(
             'menu-item-parent-id' => $top_level_menu_id,
             'menu-item-title' =>  __('Fulton Schools News'),
-            'menu-item-url' => home_url( 'http://fullcircle.asu.edu/' ),
+            'menu-item-url' => 'https://fullcircle.asu.edu/',
             'menu-item-status' => 'publish'));
 
         wp_update_nav_menu_item($menu_id, 0, array(
             'menu-item-parent-id' => $top_level_menu_id,
-            'menu-item-title' =>  __('Degre Programes'),
-            'menu-item-url' => home_url( 'http://explore.engineering.asu.edu/' ),
+            'menu-item-title' =>  __('Degree Programs'),
+            'menu-item-url' => 'https://explore.engineering.asu.edu/',
             'menu-item-status' => 'publish'));
 
         wp_update_nav_menu_item($menu_id, 0, array(
             'menu-item-parent-id' => $top_level_menu_id,
             'menu-item-title' =>  __('Contacts'),
-            'menu-item-url' => home_url( 'https://engineering.asu.edu/contacts/' ),
+            'menu-item-url' => 'https://engineering.asu.edu/contacts/',
             'menu-item-status' => 'publish'));
-
 
         $locations = get_theme_mod( 'nav_menu_locations' );
         $locations['primary-menu'] = $top_level_menu_id;
