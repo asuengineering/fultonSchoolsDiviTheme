@@ -24,10 +24,7 @@ Further improvements also include:
 * Proper handling/styling of linked images and external links. 
 * Improvements to the Divi Portfolio module to align the filter bar and other module elements to ASU Brand Standards.
 
-> "Sigh no more, ladies, sigh no more,
- Men were deceivers ever,
- One foot in sea and one on shore,
- To one thing constant never."
+> "Sigh no more, ladies, sigh no more, Men were deceivers ever, One foot in sea and one on shore, To one thing constant never."
 -- *Balthasar, Much Ado About Nothing (882-885)*
 
 #### Version 1.7 (Portia) ####
