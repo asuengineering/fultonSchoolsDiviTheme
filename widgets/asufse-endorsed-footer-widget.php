@@ -56,8 +56,8 @@
         $summarytext = isset( $instance['summarytext'] ) ? esc_textarea( $instance['summarytext'] ) : '';
         $parentorg = isset($instance['parentorg']) ? esc_textarea( $instance['parentorg'] ) : '';
         $contactLink = isset($instance['contactLink']) ? esc_url( $instance['contactLink'] ) : '';
-        $phone = isset($instance['phone']) ? esc_url( $instance['phone'] ) : '';
-        $fax = isset($instance['fax']) ? esc_url( $instance['fax']) : '';
+        $phone = isset($instance['phone']) ? sanitize_text_field( $instance['phone'] ) : '';
+        $fax = isset($instance['fax']) ? sanitize_text_field( $instance['fax']) : '';
         $contributeLink = isset($instance['contributeLink']) ? esc_url($instance['contributeLink']) : '';
 
         ?>
