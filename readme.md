@@ -12,10 +12,28 @@ Please also note that this repository contains a child theme and not a stand-alo
 
 ## Enhancements ##
 
+### Version 1.8 (Balthasar) ###
+
+Two new widgets for the super-footer were created with this release to accommodate the new Fulton Schools of Engineering logo and more closely conform to [ASU Brand Guide](https://brandguide.asu.edu/web-standards/enterprise/super-footer) standards.
+* The new **ASU Engineering Footer Widget** automatically includes the new FSE endorsed logo, complete with link to the Engineering home page. No need to add it to the media library.
+* The new **ASU Social Media Icons Footer Widget** centralizes the location of all URL entries for social media channels to one widget.
+
+This release also depreciates two older widgets from an older FSDT release. See wp-admin/admin.php?page=asu_social_media_editor and wp-admin/admin.php?page=asu_social_media_editor within your install for more details.
+
+Further improvements also include:
+* Proper handling/styling of linked images and external links. 
+* Improvements to the Divi Portfolio module to align the filter bar and other module elements to ASU Brand Standards.
+
+> "Sigh no more, ladies, sigh no more,
+ Men were deceivers ever,
+ One foot in sea and one on shore,
+ To one thing constant never."
+-- *Balthasar, Much Ado About Nothing (882-885)*
+
 #### Version 1.7 (Portia) ####
 
 * Changes to Mega Menu formatting now includes a column header format for each column of links within the menu.
-* Introduced new expirmental "compact" formatting for sidebar elements. Reduces padding/elements within sidebars build within Divi. Adds differentiation among H3/H4/H5 elements used as headers within.
+* Introduced new experimental "compact" formatting for sidebar elements. Reduces padding/elements within sidebars build within Divi. Adds differentiation among H3/H4/H5 elements used as headers within.
 * Introduced GitHub Issue Tracking as a way to keep track of future enhancements. [Feedback always welcome](https://github.com/fsoe-asu/fultonSchoolsDiviTheme/issues).
 * Nifty new documentation and version naming.
 * Enables updates to the theme via [GihHub Updater](https://github.com/afragen/github-updater) plugin.
