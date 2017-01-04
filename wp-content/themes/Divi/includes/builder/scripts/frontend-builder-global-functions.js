@@ -41,7 +41,7 @@
 	}
 
 	window.et_pb_form_placeholders_init = function( $form ) {
-		$form.find('input:text, textarea').each(function(index,domEle){
+		$form.find('input:text, input[type="email"], input[type="url"], textarea').each(function(index,domEle){
 			var $et_current_input = jQuery(domEle),
 				$et_comment_label = $et_current_input.siblings('label'),
 				et_comment_label_value = $et_current_input.siblings('label').text();
@@ -122,6 +122,28 @@
 			$.proxy( et_calc_fullscreen_section, $this_section )();
 
 			$et_window.on( 'resize', $.proxy( et_calc_fullscreen_section, $this_section ) );
+		});
+	}
+
+	window.et_fix_pricing_currency_position = function( $pricing_table ) {
+		var $all_pricing_tables = typeof $pricing_table !== 'undefined' ? $pricing_table : $( '.et_pb_pricing_table' );
+
+		if ( ! $all_pricing_tables.length ) {
+			return;
+		}
+
+		$all_pricing_tables.each( function() {
+			var $this_table = $( this ),
+				$price_container = $this_table.find( '.et_pb_et_price' ),
+				$currency = $price_container.length ? $price_container.find( '.et_pb_dollar_sign' ) : false,
+				$price = $price_container.length ? $price_container.find( '.et_pb_sum' ) : false;
+
+			if ( ! $currency || ! $price ) {
+				return;
+			}
+
+			// adjust the margin of currency sign to make sure it doesn't overflow the price
+			$currency.css( { 'marginLeft' : - $currency.width() + 'px' } );
 		});
 	}
 })(jQuery)
