@@ -17,6 +17,10 @@ function asu_display_sidebar_editor() {
 	?>
 		<div class="wrap" id="asu_sidebar_editor">
 			<h2>ASU Sidebar Elements</h2>
+			<div style="background-color:#e0e0e0; padding:.5em 1.5em;">
+				<h3><strong style="color:red;">WARNING: </strong>The content on this page has been depreciated as of the release of FSDT 1.8.</h3>
+				<p>If you find yourself needing to use the fields/information on this page to build or maintain something functional for a website controlled by the <a href="https://engineering.asu.edu" target="_blank">Fulton Schools of Engineering</a>, please send a message to <a href="mailto:steve.ryan@asu.edu">Steve Ryan</a> with a request to keep the feature activated. Otherwise, it will be deleted with the next major release of the FSDT.</p>
+			</div>
 			<form method="post" action="admin.php?page=asu_sidebar_editor" enctype="multipart/form-data">
 				<input type="hidden" name="action" value="asu_sidebar_update">
 				<?php wp_nonce_field('asu_display_sidebar_editor', 'asu_sidebar_editor'); ?>

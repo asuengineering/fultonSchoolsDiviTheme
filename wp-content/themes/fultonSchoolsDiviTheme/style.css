@@ -5,7 +5,7 @@
     Template:       Divi
     Description:    Arizona State University's Ira A. Fulton Schools of Engineering Child Theme for Divi (ASU Web Standards compliant)
 
-    Version:        1.7.0
+    Version:        1.8.1
 
     GitHub Theme URI: https://github.com/fsoe-asu/fultonSchoolsDiviTheme
     GitHub Branch:    master
@@ -34,7 +34,7 @@ h2 {
     margin-top: 24px;
 }
 h3 {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     line-height: 1.44;
     margin-bottom: 10px;
     margin-top: 24px;
@@ -61,7 +61,59 @@ h6 {
     margin-top: 24px;
 }
 
-/* Button styles */
+/* Default Link Colors & decorations
+/* Note: If these links still look blue (CSS overwridden by index:###),
+it's due to an incorrect setting in the theme customization panel
+--------------------------------- */
+
+a {
+    border-bottom: 1px dotted #8c1d40;
+    color: #8c1d40;
+    text-decoration: none;
+    transition: all 0.25s ease-in-out 0s;
+}
+
+a:hover, a:focus {
+    border-bottom: 1px dotted #d23153;
+    color: #d23153;
+}
+
+a.linked-image {
+    border-bottom:none;
+}
+
+a.linked-image img {
+    border: 1px solid rgba(140, 29, 64, 0);   /* Color Value: #8C1Df4 */
+}
+
+a.linked-image img:hover {
+    border: 1px solid rgba(140, 29, 64, .8);  /* Color Value: #8C1Df4 */
+}
+
+a.external-link:after {
+    color: inherit;
+    content: '\f08e';
+    display: inline-block;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-family: FontAwesome;
+    font-size: inherit;
+    line-height: 1;
+    padding-left: 6px;
+    padding-right:2px;
+    width: auto;
+}
+
+a.icon-button {
+    border-bottom: 1px solid #c3c3c3 !important;
+}
+
+
+
+/* Button Styles
+------------------------------- */
 
 .btn {
     border-radius: 4px;
@@ -430,19 +482,87 @@ input[type="button"].btn-block {
 .et_pb_portfolio_item a,
 .et-pb-slider-arrows a,
 .et_pb_member_social_links a{
-    border-bottom:none !important;
-}
-
-.et_pb_portfolio_item h2 a {
-    border-bottom: 1px dotted #d23153 !important;
+    border-bottom:none;
 }
 
 
-/* Header styles */
+/* Portfolio Module Settings, (Filter Bar + Titles)
+--------------------------------------------  */
+.et_pb_filterable_portfolio .et_pb_portfolio_filters {
+    border-bottom: 1px solid #dddddd;
+    /* Bottom line under filter bar */
+}
+
+.et_pb_filterable_portfolio .et_pb_portfolio_filters ul {
+    margin-bottom: -1px;
+    /* Adjusts margin to align bottom line with bottom of the li row */
+}
+
+.et_pb_filterable_portfolio .et_pb_portfolio_filters li {
+    line-height: inherit;
+}
+
+.et_pb_filterable_portfolio .et_pb_portfolio_filters li a {
+    color:#a7a7a7;
+    font-size:18px;
+    padding: .5em 1em;
+    border-radius: 0px;
+    position:relative;
+}
+
+.et_pb_filterable_portfolio .et_pb_portfolio_filters li a:first-child,
+.et_pb_filterable_portfolio .et_pb_portfolio_filters li a:last-child {
+    border-radius: 0px;
+}
+
+.et_pb_filterable_portfolio.clearfix .et_pb_portfolio_filters li a:hover {
+    color:#8c1d40;
+    border-bottom:1px solid rgba(255, 255, 255, 0);   /* Color Value: #FFF, but 100% transparent */
+}
+
+.et_pb_filterable_portfolio.clearfix .et_pb_portfolio_filters li a.active {
+    border-bottom:1px solid rgba(255, 255, 255, 0);   /* Color Value: #FFF, but 100% transparent */
+    background-color:#fff;
+    color:#8c1d40;
+    /* The added '.clearfix' class here increases the specificity to override the color setting within the module. */
+    /* The color within the module gets appended directly to the DOM via CSS rule in the head, making it hard to get to. */
+    /* The module should always be built with the .clearfix class included by default */
+}
+
+.et_pb_filterable_portfolio .et_pb_portfolio_filters li a.active:after {
+    /* The color bar that appears over the active option */
+    content: "Fake Content Here";
+    text-indent:-9999px;
+    display:block;
+    position:absolute;
+    height:5px;
+    width:100%;
+    top:-1px;
+    left:-.5em;
+    padding-right:.5em;
+    border-top:5px solid #8c1d40;
+}
+
+.et_pb_portfolio_item h2 a:hover {
+    color:#8c1d40; /* Use solid ASU Maroon color instead of default active maroon color. */
+}
+
+.et_portfolio_image .et_overlay:before {
+    color:#8c1d40;
+    /* Two levels of specificity to override option within module to set color via direct CSS injection.*/ 
+}
+
+/* ASU Navigation Bar Settings
+----------------------------------- */
+#top-menu li a {border-bottom:none;}
+
+/* ASU Global Header Styles
+----------------------------------- */
 
 .header-schoolname a {
     font-weight:bold;
     letter-spacing: 0.5px;
+    border-bottom:none;
 }
 
 .header-schoolname a:hover {
@@ -507,7 +627,8 @@ input[type="button"].btn-block {
 }
 
 
-/* ASU Slider styles */
+/* ASU Slider styles
+-----------------------------------*/
 .et_pb_asu_slides .et_pb_slide {
     text-align:left;
     padding: 0 1%;
@@ -524,7 +645,6 @@ input[type="button"].btn-block {
     padding-left: 8%;
 }
 
-/*
 .et_pb_asu_slides .et_pb_slide .et_pb_slide_description h1,
 .et_pb_asu_slides .et_pb_slide .et_pb_slide_description h4{
     padding: 0.1em 0;
@@ -536,54 +656,7 @@ input[type="button"].btn-block {
     margin-bottom:10px;
     display: table
 }
-*/
 
-/* Text link styles */
-
-div.et_pb_bg_layout_light a:not(.btn) {
-    border-bottom: 1px dotted #8c1d40;
-    color:#8C1D40;
-}
-
-div.et_pb_bg_layout_light a:not(.btn):hover {
-    border-bottom: 1px dotted #d23153;
-    color: #d23153;
-}
-
-div.et_pb_bg_layout_light a:not(.btn).no-border,
-div.et_pb_bg_layout_dark a:not(.btn).no-border {
-    border-bottom: none;
-}
-
-div.et_pb_bg_layout_dark a:not(.btn) {
-    border-bottom: 1px dotted #A9A9A9;
-    color:#A9A9A9;
-}
-
-div.et_pb_bg_layout_dark a:not(.btn):hover {
-    border-bottom: 1px dotted #ffffff;
-    color: #ffffff;
-}
-
-a[target="_blank"]:after {
-    color: inherit;
-    content: '\f08e';
-    display: inline-block;
-    font-size: 0.875rem;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: normal;
-    font-family: FontAwesome;
-    font-size: inherit;
-    line-height: 1;
-    padding-left: 10px;
-    padding-right: 10px;
-    width: auto;
-}
-
-a.icon-button {
-    border-bottom: 1px solid #c3c3c3 !important;
-}
 
 .et_pb_asu_slides .et_pb_slide .et_pb_slide_description h1 {
     font-weight: 600;
@@ -594,84 +667,8 @@ a.icon-button {
     color:#EEE !important;
 }
 
-.fulton-sidebar {
-    margin-bottom: 2em;
-}
-
-.fulton-sidebar .logo {
-    background-color: #cecece;
-    padding: 25px;
-}
-
-.fulton-sidebar .header {
-    padding: 0 30px;
-}
-
-.fulton-sidebar .header h2 {
-    font-size: 21px !important;
-}
-
-address {
-    font-style: normal;
-}
-
-.et_pb_google_scholar_icon:before {
-    content: "\f19d";
-}
-
-#footer-widgets .footer-widget li:before {
-    content: none;
-}
-
-.et-social-icons {
-    float:none;
-    text-align: left;
-    padding-bottom: 1em;
-}
-
-.et-social-icons li {
-    margin-left: 0;
-    padding-left: 0 !important;
-    margin-right: 10px;
-}
-
-.et-social-icon a {
-    color: #a9a9a9 !important;
-    font-size: 38px;
-    border-bottom: none !important;
-}
-
-.et-social-icon a:before {
-    display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    content: none !important;
-}
-
-@media (min-width: 981px) {
-    .footer-widget {
-        width: 29% !important;
-    }
-}
-
-.footer-widget h4 {
-    color: #fff;
-    margin-left: 12px;
-}
-
-.footer-widget a {
-    border-bottom: 1px dotted;
-    border-bottom-color: #ccc;
-    color: #ccc;
-    text-decoration: none;
-}
-.footer-widget a:hover {
-    color: #fff;
-}
-
-/*ASU footer styling*/
+/* ASU Global Innovation Footer styling
+--------------------------------- */
 
 @media (min-width: 931px) {
     #innovation-footer .footer-menu ul {
@@ -779,12 +776,131 @@ address {
     transition: all .25s ease-in-out
 }
 
+/* CSS Fixes from pre FSDT 1.5 (Uncategorized)
+=================================== */
+
+.fulton-sidebar {
+    margin-bottom: 2em;
+}
+
+.fulton-sidebar .logo {
+    background-color: #cecece;
+    padding: 25px;
+}
+
+.fulton-sidebar .header {
+    padding: 0 30px;
+}
+
+.fulton-sidebar .header h2 {
+    font-size: 21px !important;
+}
+
+address {
+    font-style: normal;
+}
+
+.et_pb_google_scholar_icon:before {
+    content: "\f19d";
+}
+
+#footer-widgets .footer-widget li:before {
+    content: none;
+}
+
+.et-social-icons {
+    float:none;
+    text-align: left;
+    padding-bottom: 1em;
+}
+
+.et-social-icons li {
+    margin-left: 0;
+    padding-left: 0 !important;
+    margin-right: 10px;
+}
+
+.et-social-icon a {
+    color: #a9a9a9 !important;
+    font-size: 38px;
+    border-bottom: none !important;
+}
+
+.et-social-icon a:before {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    content: none !important;
+}
+
+@media (min-width: 981px) {
+    .footer-widget {
+        width: 29% !important;
+    }
+}
+
+.footer-widget h4 {
+    color: #fff;
+    margin-left: 12px;
+}
+
+.footer-widget a {
+    border-bottom: 1px dotted;
+    border-bottom-color: #ccc;
+    color: #ccc;
+    text-decoration: none;
+}
+.footer-widget a:hover {
+    color: #fff;
+}
+
+/* Deals with margin-bottom under FSE Endorsed Logo Widget & Social Icon Widgets */
+/* Near zero margin by default, but if contribute link is present, sets it back to normal. */
+.et_pb_gutters3.et_pb_footer_columns4 .footer-widget .fwidget.asu-engineering-footer-widget, 
+.et_pb_gutters3.et_pb_footer_columns4 .footer-widget .fwidget.asu-socialicons-footer-widget {
+    margin-bottom:7.5%;
+}
+
+.et_pb_gutters3.et_pb_footer_columns4 .footer-widget .fwidget.asu-engineering-footer-widget .contribute, 
+.et_pb_gutters3.et_pb_footer_columns4 .footer-widget .fwidget.asu-socialicons-footer-widget .contribute {
+    margin-bottom:20%;
+}
+
+.footer-widget #fse-endorsed-logo {
+    padding-bottom:15px;
+}
+
+/* Removes dotted white line from endorsed logo */
+.footer-widget #fse-endorsed-logo a {
+    border-bottom:none;
+}
+
+/* Endorsed logo on hover keeps transparent border, instead of maroon color */
+.footer-widget #fse-endorsed-logo a img:hover {
+    border: 1px solid rgba(140, 29, 64, 0);   /* Color Value: #8C1Df4 */
+}
+
+.footer-widget #fse-endorsed-logo a { display:block; position:relative; }
+.footer-widget #fse-endorsed-logo .white-logo { 
+    position:absolute;
+    top:0;
+    left:0;
+    transition: opacity .5s;
+}
+
+.footer-widget #fse-endorsed-logo .white-logo:hover {
+    opacity: 0;
+    cursor: pointer;
+}
+
+.footer-widget .phone-link i { margin-right:5px; }
+
+
 /* Version 1.7 Fixes
 =================================== */
-    h3 {
-        font-size: 1.8rem;
-    }
-
+    
     /* Mega Menu Styling
     -------------------------------- */
     #top-menu li.mega-menu > ul > li > a:first-child {
@@ -841,3 +957,7 @@ address {
             margin-bottom: 5%;
         }
     }
+
+/* Version 1.8 Fixes
+=================================== */
+

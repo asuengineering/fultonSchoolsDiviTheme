@@ -1,9 +1,9 @@
 <?php class ASU_Footer_Widget extends WP_Widget
 {
     function __construct(){
-        $widget_ops = array( 'description' => esc_html__( 'Displays ASU Footer info', 'ASU' ) );
+        $widget_ops = array( 'description' => esc_html__( 'Displays an older version of the ASU Footer info. Depreciated as of FSDT 1.8.', 'ASU' ) );
         $control_ops = array( 'width' => 300, 'height' => 300 );
-        parent::__construct( false, $name = esc_html__( 'ASU Footer info', 'ASU' ), $widget_ops, $control_ops );
+        parent::__construct( false, $name = esc_html__( '(Depreciated) ASU Footer info', 'ASU' ), $widget_ops, $control_ops );
     }
 
     /* Displays the Widget in the front-end */
