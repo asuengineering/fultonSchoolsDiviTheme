@@ -12,6 +12,10 @@ Please also note that this repository contains a child theme and not a stand-alo
 
 ## Enhancements ##
 
+#### Version 1.8.2 ####
+* Bug fix for new footer widgets. Contribute URL's now appear as expected. (Previously defaulted to current site home page.)
+* Version number incorrectly reported with last major release. Skipped ahead to 1.8.2 for GitHub Updater to work properly.
+
 #### Version 1.8 (Balthasar) ####
 
 Two new widgets for the super-footer were created with this release to accommodate the new Fulton Schools of Engineering logo and more closely conform to [ASU Brand Guide](https://brandguide.asu.edu/web-standards/enterprise/super-footer) standards.
