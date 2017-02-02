@@ -44,7 +44,7 @@
         <?php endif; ?>        
 
         <?php if ( !empty($contributeLink) ): ?>
-            <p class="contribute"><a class="btn btn-primary" href="<?php echo $contribute_link; ?>" id="contribute-button-in-footer">Contribute</a></p>
+            <p class="contribute"><a class="btn btn-primary" href="<?php echo $contributeLink; ?>" id="contribute-button-in-footer">Contribute</a></p>
         <?php endif; ?>
 
         <?php echo $args['after_widget'];
