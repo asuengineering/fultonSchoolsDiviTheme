@@ -46,7 +46,7 @@
 	<!-- End Google Tag Manager ASU Universal -->
 
 	<div id="asu-header">
-    	<?php include 'header-asu.php'; ?>
+    	<?php get_template_part( 'header-asu' ); ?>
     	<?php echo asu_get_school_names(); ?>
     </div>  
 
