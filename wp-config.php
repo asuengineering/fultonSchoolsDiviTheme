@@ -78,8 +78,10 @@ else:
         define('WP_HOME', $scheme . '://' . $_SERVER['HTTP_HOST']);
         define('WP_SITEURL', $scheme . '://' . $_SERVER['HTTP_HOST']);
     }
+    
     // Don't show deprecations; useful under PHP 5.5
     error_reporting(E_ALL ^ E_DEPRECATED);
+    
     // Force the use of a safe temp directory when in a container
     if ( defined( 'PANTHEON_BINDING' ) ):
         define( 'WP_TEMP_DIR', sprintf( '/srv/bindings/%s/tmp', PANTHEON_BINDING ) );
@@ -114,25 +116,7 @@ else:
   endif;
 endif;
 
-/** Standard wp-config.php stuff from here on down. **/
-
-/**
- * WordPress Database Table prefix.
- *
- * You can have multiple installations in one database if you give each a unique
- * prefix. Only numbers, letters, and underscores please!
- */
-$table_prefix = 'wp_';
-
-/**
- * WordPress Localized Language, defaults to English.
- *
- * Change this to localize WordPress. A corresponding MO file for the chosen
- * language must be installed to wp-content/languages. For example, install
- * de_DE.mo to wp-content/languages and set WPLANG to 'de_DE' to enable German
- * language support.
- */
-define('WPLANG', '');
+// =============== FSE Custom Pantheon Config ==========================
 
 /**
  * For developers: Eable WordPress debugging mode.
@@ -164,6 +148,51 @@ if (defined('PANTHEON_ENVIRONMENT')) {
 /** Fix for Pantheon & Contact Form 7. 
 More here: https://pantheon.io/docs/unsupported-modules-plugins/#wordpress-plugins */
 $_SERVER['SERVER_NAME'] = $_SERVER['HTTP_HOST'];
+
+
+// Require HTTPS in wp-admin in any Pantheon environment. Done in the typical WP way.
+// Works because pantheonsite.io has a SSL certificate + domains mapped to ASU also have certificates.
+if (defined('PANTHEON_ENVIRONMENT')) {
+    define('FORCE_SSL_ADMIN', true);
+}
+
+// Require & Redirect to HTTPS with a 301. Everyplace.
+// Again, this works because pantheonsite.io has a SSL certificate, and any domain in our control does as well.
+
+if (isset($_SERVER['PANTHEON_ENVIRONMENT']) &&
+  ($_SERVER['HTTPS'] === 'OFF') &&
+  (php_sapi_name() != "cli")) {
+  if (!isset($_SERVER['HTTP_X_SSL']) ||
+  (isset($_SERVER['HTTP_X_SSL']) && $_SERVER['HTTP_X_SSL'] != 'ON')) {
+    header('HTTP/1.0 301 Moved Permanently');
+    header('Location: https://'. $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+    exit();
+  }
+}
+
+// Site specific rules to be included in a file that won't be tracked via the FSE Upstream.
+include_once('wp-config-site-specific.php');
+
+/** ========== END FSE Custom Config ================
+Standard wp-config.php stuff from here on down. **/
+
+/**
+ * WordPress Database Table prefix.
+ *
+ * You can have multiple installations in one database if you give each a unique
+ * prefix. Only numbers, letters, and underscores please!
+ */
+$table_prefix = 'wp_';
+
+/**
+ * WordPress Localized Language, defaults to English.
+ *
+ * Change this to localize WordPress. A corresponding MO file for the chosen
+ * language must be installed to wp-content/languages. For example, install
+ * de_DE.mo to wp-content/languages and set WPLANG to 'de_DE' to enable German
+ * language support.
+ */
+define('WPLANG', '');
 
 /* That's all, stop editing! Happy Pressing. */
 
