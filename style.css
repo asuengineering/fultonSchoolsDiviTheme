@@ -1,0 +1,963 @@
+/* 
+    Theme Name:     Fulton Schools Divi Theme
+    Author:         Ira A. Fulton Schools of Engineering
+    Author URI:     http://engineering.asu.edu/
+    Template:       Divi
+    Description:    Arizona State University's Ira A. Fulton Schools of Engineering Child Theme for Divi (ASU Web Standards compliant)
+
+    Version:        1.8.2
+
+    GitHub Theme URI: https://github.com/fsoe-asu/fultonSchoolsDiviTheme
+    GitHub Branch:    master
+*/
+
+/* Roboto Font*/
+body {
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color: #222222;
+    font-weight: 200;
+    line-height: 1.44em;
+}
+
+/* Header Styles*/
+h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 48px;
+    margin-top: 0;
+}
+h2 {
+    font-size: 2.25rem;
+    line-height: 1.44;
+    margin-bottom: 10px;
+    margin-top: 24px;
+}
+h3 {
+    font-size: 1.8rem;
+    line-height: 1.44;
+    margin-bottom: 10px;
+    margin-top: 24px;
+}
+h4 {
+    font-size: 1.3125rem;
+    line-height: 1.44;
+    margin-bottom: 10px;
+    margin-top: 24px
+}
+h5 {
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+    margin-bottom: 10px;
+    margin-top: 24px;
+}
+h6 {
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 200;
+    line-height: 1.5rem;
+    margin-bottom: 10px;
+    margin-top: 24px;
+}
+
+/* Default Link Colors & decorations
+/* Note: If these links still look blue (CSS overwridden by index:###),
+it's due to an incorrect setting in the theme customization panel
+--------------------------------- */
+
+a {
+    border-bottom: 1px dotted #8c1d40;
+    color: #8c1d40;
+    text-decoration: none;
+    transition: all 0.25s ease-in-out 0s;
+}
+
+a:hover, a:focus {
+    border-bottom: 1px dotted #d23153;
+    color: #d23153;
+}
+
+a.linked-image {
+    border-bottom:none;
+}
+
+a.linked-image img {
+    border: 1px solid rgba(140, 29, 64, 0);   /* Color Value: #8C1Df4 */
+}
+
+a.linked-image img:hover {
+    border: 1px solid rgba(140, 29, 64, .8);  /* Color Value: #8C1Df4 */
+}
+
+a.external-link:after {
+    color: inherit;
+    content: '\f08e';
+    display: inline-block;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-family: FontAwesome;
+    font-size: inherit;
+    line-height: 1;
+    padding-left: 6px;
+    padding-right:2px;
+    width: auto;
+}
+
+a.icon-button {
+    border-bottom: 1px solid #c3c3c3 !important;
+}
+
+
+
+/* Button Styles
+------------------------------- */
+
+.btn {
+    border-radius: 4px;
+    font-size: 1rem;
+    line-height: 1.44;
+    padding: 5px 20px;
+    border-bottom:none !important;
+    display:inline-block;
+}
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0;
+    outline-offset: none;
+}
+.btn:hover, .btn:focus {
+    color: #505050;
+    text-decoration: none;
+}
+.btn:active, .btn.active {
+    -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    background-image: none;
+    outline: 0;
+}
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.btn-grey {
+    color: #ffffff;
+    background-color: #5C6670;
+    border-color: #5C6670;
+}
+.btn-grey:hover, .btn-grey:focus, .btn-grey:active, .btn-grey.active, .open > .btn-grey.dropdown-toggle {
+    color: #ffffff;
+    background-color: #40474E;
+    border-color: #40474E;
+}
+
+.btn-default {
+    color: #505050;
+    background-color: #f5f5f5;
+    border-color: #b0b0b0;
+}
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .btn-default.dropdown-toggle {
+    background-color: gainsboro;
+    border-color: #919191;
+    color: #505050;
+}
+.btn-default:active, .btn-default.active, .open > .btn-default.dropdown-toggle {
+    background-image: none;
+}
+.btn-default:active:focus, .btn-default:active.focus, .btn-default:active:hover, .btn-default:active.hover, .btn-default.active:focus, .btn-default.active.focus, .btn-default.active:hover, .btn-default.active.hover, .open > .btn-default.dropdown-toggle:focus, .open > .btn-default.dropdown-toggle.focus, .open > .btn-default.dropdown-toggle:hover, .open > .btn-default.dropdown-toggle.hover {
+    background-color: gainsboro;
+    border-color: #919191;
+    color: #505050;
+}
+.btn-default.disabled, .btn-default.disabled:hover, .btn-default.disabled:focus, .btn-default.disabled:active, .btn-default.disabled.active, .btn-default[disabled], .btn-default[disabled]:hover, .btn-default[disabled]:focus, .btn-default[disabled]:active, .btn-default[disabled].active, fieldset[disabled] .btn-default, fieldset[disabled] .btn-default:hover, fieldset[disabled] .btn-default:focus, fieldset[disabled] .btn-default:active, fieldset[disabled] .btn-default.active {
+    background-color: #f5f5f5;
+    border-color: #b0b0b0;
+}
+.btn-default .badge {
+    background-color: #505050;
+    color: #f5f5f5;
+}
+
+.btn-primary {
+    color: #fff !important;
+    background-color: #8c1d40;
+    border-color: #8c1d40;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
+    background-color: #62142d;
+    border-color: #591229;
+    color: #fff;
+}
+.btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
+    background-image: none;
+}
+.btn-primary:active:focus, .btn-primary:active.focus, .btn-primary:active:hover, .btn-primary:active.hover, .btn-primary.active:focus, .btn-primary.active.focus, .btn-primary.active:hover, .btn-primary.active.hover, .open > .btn-primary.dropdown-toggle:focus, .open > .btn-primary.dropdown-toggle.focus, .open > .btn-primary.dropdown-toggle:hover, .open > .btn-primary.dropdown-toggle.hover {
+    background-color: #62142d;
+    border-color: #591229;
+    color: #fff;
+}
+.btn-primary.disabled, .btn-primary.disabled:hover, .btn-primary.disabled:focus, .btn-primary.disabled:active, .btn-primary.disabled.active, .btn-primary[disabled], .btn-primary[disabled]:hover, .btn-primary[disabled]:focus, .btn-primary[disabled]:active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-primary.active {
+    background-color: #8c1d40;
+    border-color: #8c1d40;
+}
+.btn-primary .badge {
+    background-color: #fff;
+    color: #8c1d40;
+}
+
+.btn-secondary {
+    color: #1e1e1e;
+    background-color: #dbdbdb;
+    border-color: #dbdbdb;
+}
+.btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active, .btn-secondary.active, .open > .btn-secondary.dropdown-toggle {
+    background-color: #c2c2c2;
+    border-color: #bcbcbc;
+    color: #000;
+}
+.btn-secondary:active, .btn-secondary.active, .open > .btn-secondary.dropdown-toggle {
+    background-image: none;
+}
+.btn-secondary:active:focus, .btn-secondary:active.focus, .btn-secondary:active:hover, .btn-secondary:active.hover, .btn-secondary.active:focus, .btn-secondary.active.focus, .btn-secondary.active:hover, .btn-secondary.active.hover, .open > .btn-secondary.dropdown-toggle:focus, .open > .btn-secondary.dropdown-toggle.focus, .open > .btn-secondary.dropdown-toggle:hover, .open > .btn-secondary.dropdown-toggle.hover {
+    background-color: #c2c2c2;
+    border-color: #bcbcbc;
+    color: #000;
+}
+.btn-secondary.disabled, .btn-secondary.disabled:hover, .btn-secondary.disabled:focus, .btn-secondary.disabled:active, .btn-secondary.disabled.active, .btn-secondary[disabled], .btn-secondary[disabled]:hover, .btn-secondary[disabled]:focus, .btn-secondary[disabled]:active, .btn-secondary[disabled].active, fieldset[disabled] .btn-secondary, fieldset[disabled] .btn-secondary:hover, fieldset[disabled] .btn-secondary:focus, fieldset[disabled] .btn-secondary:active, fieldset[disabled] .btn-secondary.active {
+    background-color: #dbdbdb;
+    border-color: #dbdbdb;
+}
+.btn-secondary .badge {
+    background-color: #000;
+    color: #dbdbdb;
+}
+
+.btn-gold {
+    color: #2a2a2a;
+    background-color: #ffc627;
+    border-color: #ffc627;
+}
+.btn-gold:hover, .btn-gold:focus, .btn-gold:active, .btn-gold.active, .open > .btn-gold.dropdown-toggle {
+    background-color: #f3b300;
+    border-color: #e9ab00;
+    color: #2a2a2a;
+}
+.btn-gold:active, .btn-gold.active, .open > .btn-gold.dropdown-toggle {
+    background-image: none;
+}
+.btn-gold:active:focus, .btn-gold:active.focus, .btn-gold:active:hover, .btn-gold:active.hover, .btn-gold.active:focus, .btn-gold.active.focus, .btn-gold.active:hover, .btn-gold.active.hover, .open > .btn-gold.dropdown-toggle:focus, .open > .btn-gold.dropdown-toggle.focus, .open > .btn-gold.dropdown-toggle:hover, .open > .btn-gold.dropdown-toggle.hover {
+    background-color: #f3b300;
+    border-color: #e9ab00;
+    color: #2a2a2a;
+}
+.btn-gold.disabled, .btn-gold.disabled:hover, .btn-gold.disabled:focus, .btn-gold.disabled:active, .btn-gold.disabled.active, .btn-gold[disabled], .btn-gold[disabled]:hover, .btn-gold[disabled]:focus, .btn-gold[disabled]:active, .btn-gold[disabled].active, fieldset[disabled] .btn-gold, fieldset[disabled] .btn-gold:hover, fieldset[disabled] .btn-gold:focus, fieldset[disabled] .btn-gold:active, fieldset[disabled] .btn-gold.active {
+    background-color: #ffc627;
+    border-color: #ffc627;
+}
+.btn-gold .badge {
+    background-color: #2a2a2a;
+    color: #ffc627;
+}
+
+.btn-blue {
+    color: #fff;
+    background-color: #00a3e0;
+    border-color: #00a3e0;
+}
+.btn-blue:hover, .btn-blue:focus, .btn-blue:active, .btn-blue.active, .open > .btn-blue.dropdown-toggle {
+    background-color: #007ead;
+    border-color: #0076a3;
+    color: #fff;
+}
+.btn-blue:active, .btn-blue.active, .open > .btn-blue.dropdown-toggle {
+    background-image: none;
+}
+.btn-blue:active:focus, .btn-blue:active.focus, .btn-blue:active:hover, .btn-blue:active.hover, .btn-blue.active:focus, .btn-blue.active.focus, .btn-blue.active:hover, .btn-blue.active.hover, .open > .btn-blue.dropdown-toggle:focus, .open > .btn-blue.dropdown-toggle.focus, .open > .btn-blue.dropdown-toggle:hover, .open > .btn-blue.dropdown-toggle.hover {
+    background-color: #007ead;
+    border-color: #0076a3;
+    color: #fff;
+}
+.btn-blue.disabled, .btn-blue.disabled:hover, .btn-blue.disabled:focus, .btn-blue.disabled:active, .btn-blue.disabled.active, .btn-blue[disabled], .btn-blue[disabled]:hover, .btn-blue[disabled]:focus, .btn-blue[disabled]:active, .btn-blue[disabled].active, fieldset[disabled] .btn-blue, fieldset[disabled] .btn-blue:hover, fieldset[disabled] .btn-blue:focus, fieldset[disabled] .btn-blue:active, fieldset[disabled] .btn-blue.active {
+    background-color: #00a3e0;
+    border-color: #00a3e0;
+}
+.btn-blue .badge {
+    background-color: #fff;
+    color: #00a3e0;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #78be20;
+    border-color: #168026;
+}
+.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open > .btn-success.dropdown-toggle {
+    background-color: #5c9219;
+    border-color: #0d4c16;
+    color: #fff;
+}
+.btn-success:active, .btn-success.active, .open > .btn-success.dropdown-toggle {
+    background-image: none;
+}
+.btn-success:active:focus, .btn-success:active.focus, .btn-success:active:hover, .btn-success:active.hover, .btn-success.active:focus, .btn-success.active.focus, .btn-success.active:hover, .btn-success.active.hover, .open > .btn-success.dropdown-toggle:focus, .open > .btn-success.dropdown-toggle.focus, .open > .btn-success.dropdown-toggle:hover, .open > .btn-success.dropdown-toggle.hover {
+    background-color: #5c9219;
+    border-color: #0d4c16;
+    color: #fff;
+}
+.btn-success.disabled, .btn-success.disabled:hover, .btn-success.disabled:focus, .btn-success.disabled:active, .btn-success.disabled.active, .btn-success[disabled], .btn-success[disabled]:hover, .btn-success[disabled]:focus, .btn-success[disabled]:active, .btn-success[disabled].active, fieldset[disabled] .btn-success, fieldset[disabled] .btn-success:hover, fieldset[disabled] .btn-success:focus, fieldset[disabled] .btn-success:active, fieldset[disabled] .btn-success.active {
+    background-color: #78be20;
+    border-color: #168026;
+}
+.btn-success .badge {
+    background-color: #fff;
+    color: #78be20;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: #00a3e0;
+    border-color: #010598;
+}
+.btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .open > .btn-info.dropdown-toggle {
+    background-color: #007ead;
+    border-color: #00035b;
+    color: #fff;
+}
+.btn-info:active, .btn-info.active, .open > .btn-info.dropdown-toggle {
+    background-image: none;
+}
+.btn-info:active:focus, .btn-info:active.focus, .btn-info:active:hover, .btn-info:active.hover, .btn-info.active:focus, .btn-info.active.focus, .btn-info.active:hover, .btn-info.active.hover, .open > .btn-info.dropdown-toggle:focus, .open > .btn-info.dropdown-toggle.focus, .open > .btn-info.dropdown-toggle:hover, .open > .btn-info.dropdown-toggle.hover {
+    background-color: #007ead;
+    border-color: #00035b;
+    color: #fff;
+}
+.btn-info.disabled, .btn-info.disabled:hover, .btn-info.disabled:focus, .btn-info.disabled:active, .btn-info.disabled.active, .btn-info[disabled], .btn-info[disabled]:hover, .btn-info[disabled]:focus, .btn-info[disabled]:active, .btn-info[disabled].active, fieldset[disabled] .btn-info, fieldset[disabled] .btn-info:hover, fieldset[disabled] .btn-info:focus, fieldset[disabled] .btn-info:active, fieldset[disabled] .btn-info.active {
+    background-color: #00a3e0;
+    border-color: #010598;
+}
+.btn-info .badge {
+    background-color: #fff;
+    color: #00a3e0;
+}
+
+.btn-warning {
+    color: #000;
+    background-color: #ffc627;
+    border-color: #c69304;
+}
+.btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.active, .open > .btn-warning.dropdown-toggle {
+    background-color: #f3b300;
+    border-color: #8a6603;
+    color: #000;
+}
+.btn-warning:active, .btn-warning.active, .open > .btn-warning.dropdown-toggle {
+    background-image: none;
+}
+.btn-warning:active:focus, .btn-warning:active.focus, .btn-warning:active:hover, .btn-warning:active.hover, .btn-warning.active:focus, .btn-warning.active.focus, .btn-warning.active:hover, .btn-warning.active.hover, .open > .btn-warning.dropdown-toggle:focus, .open > .btn-warning.dropdown-toggle.focus, .open > .btn-warning.dropdown-toggle:hover, .open > .btn-warning.dropdown-toggle.hover {
+    background-color: #f3b300;
+    border-color: #8a6603;
+    color: #000;
+}
+.btn-warning.disabled, .btn-warning.disabled:hover, .btn-warning.disabled:focus, .btn-warning.disabled:active, .btn-warning.disabled.active, .btn-warning[disabled], .btn-warning[disabled]:hover, .btn-warning[disabled]:focus, .btn-warning[disabled]:active, .btn-warning[disabled].active, fieldset[disabled] .btn-warning, fieldset[disabled] .btn-warning:hover, fieldset[disabled] .btn-warning:focus, fieldset[disabled] .btn-warning:active, fieldset[disabled] .btn-warning.active {
+    background-color: #ffc627;
+    border-color: #c69304;
+}
+.btn-warning .badge {
+    background-color: #000;
+    color: #ffc627;
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #ff7f32;
+    border-color: #d15104;
+}
+.btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .open > .btn-danger.dropdown-toggle {
+    background-color: #fe5f00;
+    border-color: #953a03;
+    color: #fff;
+}
+.btn-danger:active, .btn-danger.active, .open > .btn-danger.dropdown-toggle {
+    background-image: none;
+}
+.btn-danger:active:focus, .btn-danger:active.focus, .btn-danger:active:hover, .btn-danger:active.hover, .btn-danger.active:focus, .btn-danger.active.focus, .btn-danger.active:hover, .btn-danger.active.hover, .open > .btn-danger.dropdown-toggle:focus, .open > .btn-danger.dropdown-toggle.focus, .open > .btn-danger.dropdown-toggle:hover, .open > .btn-danger.dropdown-toggle.hover {
+    background-color: #fe5f00;
+    border-color: #953a03;
+    color: #fff;
+}
+.btn-danger.disabled, .btn-danger.disabled:hover, .btn-danger.disabled:focus, .btn-danger.disabled:active, .btn-danger.disabled.active, .btn-danger[disabled], .btn-danger[disabled]:hover, .btn-danger[disabled]:focus, .btn-danger[disabled]:active, .btn-danger[disabled].active, fieldset[disabled] .btn-danger, fieldset[disabled] .btn-danger:hover, fieldset[disabled] .btn-danger:focus, fieldset[disabled] .btn-danger:active, fieldset[disabled] .btn-danger.active {
+    background-color: #ff7f32;
+    border-color: #d15104;
+}
+.btn-danger .badge {
+    background-color: #fff;
+    color: #ff7f32;
+}
+
+.btn-link {
+    border-radius: 0;
+    color: #8c1d40;
+    cursor: pointer;
+    font-weight: normal;
+}
+.btn-link, .btn-link:active, .btn-link[disabled], fieldset[disabled] .btn-link {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background-color: transparent;
+}
+.btn-link, .btn-link:hover, .btn-link:focus, .btn-link:active {
+    border-color: transparent;
+}
+.btn-link:hover, .btn-link:focus {
+    background-color: transparent;
+    color: #d23153;
+    text-decoration: underline;
+}
+.btn-link[disabled]:hover, .btn-link[disabled]:focus, fieldset[disabled] .btn-link:hover, fieldset[disabled] .btn-link:focus {
+    color: #777;
+    text-decoration: none;
+}
+
+.btn-lg {
+    border-radius: 4px;
+    font-size: 1.125rem;
+    line-height: 1.33;
+    padding: 10px 25px;
+}
+
+.btn-sm {
+    border-radius: 4px;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    padding: 5px 10px;
+}
+
+.btn-xs {
+    border-radius: 4px;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    padding: 1px 5px;
+}
+
+.btn-block {
+    display: block;
+    font-size: 1rem;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 100%;
+}
+@media (min-width: 1200px) {
+    .btn-block {
+        font-size: 1.125rem;
+    }
+}
+.btn-block + .btn-block {
+    margin-top: 15px;
+}
+
+input[type="submit"].btn-block,
+input[type="reset"].btn-block,
+input[type="button"].btn-block {
+    width: 100%;
+}
+
+.icon-button {
+    padding: 6px 14px !important;
+
+}
+.icon-button span {
+    padding-right:5px;
+}
+
+/* button underline overrides */
+.et_pb_portfolio_item a,
+.et-pb-slider-arrows a,
+.et_pb_member_social_links a{
+    border-bottom:none;
+}
+
+
+/* Portfolio Module Settings, (Filter Bar + Titles)
+--------------------------------------------  */
+.et_pb_filterable_portfolio .et_pb_portfolio_filters {
+    border-bottom: 1px solid #dddddd;
+    /* Bottom line under filter bar */
+}
+
+.et_pb_filterable_portfolio .et_pb_portfolio_filters ul {
+    margin-bottom: -1px;
+    /* Adjusts margin to align bottom line with bottom of the li row */
+}
+
+.et_pb_filterable_portfolio .et_pb_portfolio_filters li {
+    line-height: inherit;
+}
+
+.et_pb_filterable_portfolio .et_pb_portfolio_filters li a {
+    color:#a7a7a7;
+    font-size:18px;
+    padding: .5em 1em;
+    border-radius: 0px;
+    position:relative;
+}
+
+.et_pb_filterable_portfolio .et_pb_portfolio_filters li a:first-child,
+.et_pb_filterable_portfolio .et_pb_portfolio_filters li a:last-child {
+    border-radius: 0px;
+}
+
+.et_pb_filterable_portfolio.clearfix .et_pb_portfolio_filters li a:hover {
+    color:#8c1d40;
+    border-bottom:1px solid rgba(255, 255, 255, 0);   /* Color Value: #FFF, but 100% transparent */
+}
+
+.et_pb_filterable_portfolio.clearfix .et_pb_portfolio_filters li a.active {
+    border-bottom:1px solid rgba(255, 255, 255, 0);   /* Color Value: #FFF, but 100% transparent */
+    background-color:#fff;
+    color:#8c1d40;
+    /* The added '.clearfix' class here increases the specificity to override the color setting within the module. */
+    /* The color within the module gets appended directly to the DOM via CSS rule in the head, making it hard to get to. */
+    /* The module should always be built with the .clearfix class included by default */
+}
+
+.et_pb_filterable_portfolio .et_pb_portfolio_filters li a.active:after {
+    /* The color bar that appears over the active option */
+    content: "Fake Content Here";
+    text-indent:-9999px;
+    display:block;
+    position:absolute;
+    height:5px;
+    width:100%;
+    top:-1px;
+    left:-.5em;
+    padding-right:.5em;
+    border-top:5px solid #8c1d40;
+}
+
+.et_pb_portfolio_item h2 a:hover {
+    color:#8c1d40; /* Use solid ASU Maroon color instead of default active maroon color. */
+}
+
+.et_portfolio_image .et_overlay:before {
+    color:#8c1d40;
+    /* Two levels of specificity to override option within module to set color via direct CSS injection.*/ 
+}
+
+/* ASU Navigation Bar Settings
+----------------------------------- */
+#top-menu li a {border-bottom:none;}
+
+/* ASU Global Header Styles
+----------------------------------- */
+
+.header-schoolname a {
+    font-weight:bold;
+    letter-spacing: 0.5px;
+    border-bottom:none;
+}
+
+.header-schoolname a:hover {
+    font-weight:bold;
+}
+
+.header-schoolname .school {
+    color: #000000;
+}
+
+.header-schoolname .secondary-school {
+    color: #4F5557;
+}
+
+.et_fixed_nav #main-header {
+    position: inherit !important;
+}
+
+#asu-header {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1080px;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#asu-header .container {
+    margin:0;
+    width:100%;
+}
+
+#page-container {
+    padding-top: 0 !important;
+    margin-top: -50px !important;
+}
+
+/* Top navigation styles */
+
+#top-menu a:hover { 
+    color: #FFB204; 
+}
+
+#et-top-navigation {
+    float: none;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+.asu_home_url {
+    background-image: url('./images/home.png');
+    background-repeat: no-repeat;
+    background-position: top center;
+    height:16px;
+    text-indent: -5000px;
+    top: -2px;
+    width:16px;
+    padding-left:5px;
+    padding-right:5px;
+}
+
+
+/* ASU Slider styles
+-----------------------------------*/
+.et_pb_asu_slides .et_pb_slide {
+    text-align:left;
+    padding: 0 1%;
+}
+
+.et_pb_asu_slides .et_pb_slide .et_pb_container {
+    margin:0px;
+}
+
+.et_pb_asu_slides .et_pb_slide .et_pb_slide_description {
+    padding-top: 4%;
+    padding-right: 8%;
+    padding-bottom: 28%;
+    padding-left: 8%;
+}
+
+.et_pb_asu_slides .et_pb_slide .et_pb_slide_description h1,
+.et_pb_asu_slides .et_pb_slide .et_pb_slide_description h4{
+    padding: 0.1em 0;
+    -webkit-box-shadow: rgba(0,0,0,0.5) 10px 0px 0px 0px,rgba(0,0,0,0.5) -10px 0px 0px 0px;
+    -moz-box-shadow: rgba(0,0,0,0.5) 10px 0px 0px 0px,rgba(0,0,0,0.5) -10px 0px 0px 0px;
+    box-shadow: rgba(0,0,0,0.5) 10px 0px 0px 0px,rgba(0,0,0,0.5) -10px 0px 0px 0px;
+    background-color: rgba(0,0,0,0.5);
+    text-shadow: none;
+    margin-bottom:10px;
+    display: table
+}
+
+
+.et_pb_asu_slides .et_pb_slide .et_pb_slide_description h1 {
+    font-weight: 600;
+}
+
+.et_pb_slide_title a {
+    border-bottom: none !important;
+    color:#EEE !important;
+}
+
+/* ASU Global Innovation Footer styling
+--------------------------------- */
+
+@media (min-width: 931px) {
+    #innovation-footer .footer-menu ul {
+        width: 768px
+    }
+}
+@media (min-width: 992px) {
+    #innovation-footer .footer-menu ul {
+        width: 931px
+    }
+}
+@media (min-width: 1200px) {
+    #innovation-footer .footer-menu ul {
+        width: 1080px
+    }
+}
+@media only screen and (max-width: 930px) {
+
+    #innovation-bar .innovation-status {
+        width: 95%!important
+    }
+    #innovation-footer .footer-menu {
+        margin-left: 0
+    }
+    #innovation-footer .footer-menu ul {
+        padding-left: 0
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #innovation-footer .footer-menu ul li {
+        clear: left
+    }
+    #innovation-footer .footer-menu ul.default {
+        margin-left: 0
+    }
+    .innovation-hidden {
+        display:none;
+    }
+}
+
+#innovation-bar,
+#innovation-footer .footer-menu ul li a {
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif
+}
+
+#innovation-bar .innovation-hidden {
+    float: right;
+    width: 19%;
+    height: 0
+}
+#innovation-bar img {
+    margin-top: -2em;
+    height: 6em
+}
+#innovation-bar {
+    background-color: #FFC627
+}
+#innovation-bar .innovation-status {
+    text-align: right;
+    width: 78%;
+    display: inline-block;
+    margin-bottom: .7em;
+    margin-top: .7em
+}
+#innovation-bar a {
+    border-bottom: 0;
+    color: #000;
+    font-size: x-large;
+    font-weight: 700;
+    text-decoration: none
+}
+#innovation-footer {
+    position: absolute;
+    left: 0;
+    right: 0
+}
+#innovation-footer .footer-menu {
+    padding: 0 15px;
+    background-color: #e5e5e5
+}
+#innovation-footer .footer-menu ul {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: table;
+    list-style: none;
+    margin: 0 auto;
+    padding-bottom: .5em;
+    padding-top: 1em
+}
+#innovation-footer .footer-menu ul.default {
+    padding-left: 15px
+}
+#innovation-footer .footer-menu ul li {
+    float: left;
+    padding-bottom: 12px
+}
+#innovation-footer .footer-menu ul li a {
+    color: #333;
+    font-weight: 400;
+    font-size: 1em;
+    margin-right: 30px;
+    text-decoration: none;
+    border-bottom: none;
+    transition: all .25s ease-in-out
+}
+
+/* CSS Fixes from pre FSDT 1.5 (Uncategorized)
+=================================== */
+
+.fulton-sidebar {
+    margin-bottom: 2em;
+}
+
+.fulton-sidebar .logo {
+    background-color: #cecece;
+    padding: 25px;
+}
+
+.fulton-sidebar .header {
+    padding: 0 30px;
+}
+
+.fulton-sidebar .header h2 {
+    font-size: 21px !important;
+}
+
+address {
+    font-style: normal;
+}
+
+.et_pb_google_scholar_icon:before {
+    content: "\f19d";
+}
+
+#footer-widgets .footer-widget li:before {
+    content: none;
+}
+
+.et-social-icons {
+    float:none;
+    text-align: left;
+    padding-bottom: 1em;
+}
+
+.et-social-icons li {
+    margin-left: 0;
+    padding-left: 0 !important;
+    margin-right: 10px;
+}
+
+.et-social-icon a {
+    color: #a9a9a9 !important;
+    font-size: 38px;
+    border-bottom: none !important;
+}
+
+.et-social-icon a:before {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    content: none !important;
+}
+
+@media (min-width: 981px) {
+    .footer-widget {
+        width: 29% !important;
+    }
+}
+
+.footer-widget h4 {
+    color: #fff;
+    margin-left: 12px;
+}
+
+.footer-widget a {
+    border-bottom: 1px dotted;
+    border-bottom-color: #ccc;
+    color: #ccc;
+    text-decoration: none;
+}
+.footer-widget a:hover {
+    color: #fff;
+}
+
+/* Deals with margin-bottom under FSE Endorsed Logo Widget & Social Icon Widgets */
+/* Near zero margin by default, but if contribute link is present, sets it back to normal. */
+.et_pb_gutters3.et_pb_footer_columns4 .footer-widget .fwidget.asu-engineering-footer-widget, 
+.et_pb_gutters3.et_pb_footer_columns4 .footer-widget .fwidget.asu-socialicons-footer-widget {
+    margin-bottom:7.5%;
+}
+
+.et_pb_gutters3.et_pb_footer_columns4 .footer-widget .fwidget.asu-engineering-footer-widget .contribute, 
+.et_pb_gutters3.et_pb_footer_columns4 .footer-widget .fwidget.asu-socialicons-footer-widget .contribute {
+    margin-bottom:20%;
+}
+
+.footer-widget #fse-endorsed-logo {
+    padding-bottom:15px;
+}
+
+/* Removes dotted white line from endorsed logo */
+.footer-widget #fse-endorsed-logo a {
+    border-bottom:none;
+}
+
+/* Endorsed logo on hover keeps transparent border, instead of maroon color */
+.footer-widget #fse-endorsed-logo a img:hover {
+    border: 1px solid rgba(140, 29, 64, 0);   /* Color Value: #8C1Df4 */
+}
+
+.footer-widget #fse-endorsed-logo a { display:block; position:relative; }
+.footer-widget #fse-endorsed-logo .white-logo { 
+    position:absolute;
+    top:0;
+    left:0;
+    transition: opacity .5s;
+}
+
+.footer-widget #fse-endorsed-logo .white-logo:hover {
+    opacity: 0;
+    cursor: pointer;
+}
+
+.footer-widget .phone-link i { margin-right:5px; }
+
+
+/* Version 1.7 Fixes
+=================================== */
+    
+    /* Mega Menu Styling
+    -------------------------------- */
+    #top-menu li.mega-menu > ul > li > a:first-child {
+        font-weight:normal;
+        /* Undoes a really poorly written rule */
+    }
+    #top-menu li.mega-menu > ul > li.menu-item-has-children > a {
+        font-weight:bold;
+        border-bottom:1px solid #FFB310;
+        font-size:14px;
+        line-height:normal;
+        text-transform:uppercase;
+        margin-bottom:5px;
+    }
+
+    #top-menu li.mega-menu > ul > li > ul > li > a {
+        border-bottom: none;
+        font-weight: normal;
+        font-size:13px;
+        line-height:normal;
+    }
+
+    /* Margin fixes for modules in sidebar.
+     Triggered by adding .condensed as a class for the Divi Module */
+
+    .condensed.et_pb_text {
+        border-bottom:2px solid #8C1D40;
+        margin-bottom:10px;
+    }
+    .condensed .widget_text .widgettitle {
+        margin-top:10px;
+    }
+
+    .condensed.et_pb_widget_area .widgettitle {
+        margin-top:10px;
+    }
+
+    @media (max-width: 980px) {
+        .et_pb_section .et_pb_column .condensed.et_pb_module {
+            margin-bottom: 10px;
+        }
+    }
+
+    @media (min-width: 981px) {
+        .et_pb_gutters3 .et_pb_column_1_3 .condensed.et_pb_module, 
+        .et_pb_gutters3.et_pb_row .et_pb_column_1_3 .condensed.et_pb_module, 
+        .et_section_specialty .et_pb_gutters3.et_pb_row .et_pb_column_1_3 .condensed.et_pb_module, 
+        .et_section_specialty .et_pb_row .et_pb_column_2_3 .et_pb_gutters3.et_pb_row_inner .et_pb_column_1_3 .condensed.et_pb_module {
+            margin-bottom: 0%;
+        }
+
+        .et_pb_gutters3 .et_pb_column_1_3 .condensed.et_pb_grid_item, 
+        .et_pb_gutters3 .et_pb_column_1_3 .condensed.et_pb_widget {
+            margin-bottom: 5%;
+        }
+    }
+
+/* Version 1.8 Fixes
+=================================== */
+
