@@ -886,7 +886,7 @@ address {
 }
 
 .footer-widget #fse-endorsed-logo .white-logo:hover {
-    transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.05, 1.05, 1.05);
     cursor: pointer;
 }
 
