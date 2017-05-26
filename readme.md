@@ -10,7 +10,13 @@ The parent theme for the FSDT is the excellent [Divi Theme from Elegant Themes](
 
 Please also note that this repository contains a child theme and not a stand-alone theme designed for use with [The Divi Builder](http://www.elegantthemes.com/plugins/divi-builder/) plugin also from Elegant Themes. 
 
+![Sparky's Trident](https://brandguide.asu.edu/sites/default/files/styles/panopoly_image_original/public/asu_brandhq_images_master_pitchfork_0.png?itok=CdnAzLZW)
+
 ## Enhancements ##
+
+#### Version 1.8.3 ####
+* Included new assets for ASU Brand Standards, including fixes to the global header, footer and endorsed logo. 
+* Added Snapchat to the ASU Social Medial Icons Footer Widget
 
 #### Version 1.8.2 ####
 * Bug fix for new footer widgets. Contribute URL's now appear as expected. (Previously defaulted to current site home page.)
