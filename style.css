@@ -877,21 +877,16 @@ address {
     border-bottom:none;
 }
 
-/* Endorsed logo on hover keeps transparent border, instead of maroon color */
-.footer-widget #fse-endorsed-logo a img:hover {
-    border: 1px solid rgba(140, 29, 64, 0);   /* Color Value: #8C1Df4 */
-}
-
-.footer-widget #fse-endorsed-logo a { display:block; position:relative; }
-.footer-widget #fse-endorsed-logo .white-logo { 
-    position:absolute;
-    top:0;
-    left:0;
-    transition: opacity .5s;
+/* Endorsed logo transform on hover */
+.footer-widget #fse-endorsed-logo .white-logo {
+    transition-duration: .5s;
+    transform: scale3d(1, 1, 1);
+    transform-origin: top left;
+    padding-bottom: 10px;
 }
 
 .footer-widget #fse-endorsed-logo .white-logo:hover {
-    opacity: 0;
+    transform: scale3d(1.1, 1.1, 1.1);
     cursor: pointer;
 }
 

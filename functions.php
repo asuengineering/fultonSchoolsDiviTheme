@@ -22,7 +22,7 @@ function fsdt_enqueue_scripts() {
 
     wp_deregister_style( 'font-awesome' );
 
-    wp_register_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', false, '4.5.0' );
+    wp_register_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', false, '4.7.0' );
     wp_register_style( 'parent-style', get_template_directory_uri() . '/style.css');
     wp_register_style( 'asu-header-css', get_stylesheet_directory_uri() . '/assets/asu-header/css/asu-nav.css', array(), false, 'all' );
     wp_register_style( 'roboto-font', 'https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic', array(), '1' );
