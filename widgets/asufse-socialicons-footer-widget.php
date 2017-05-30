@@ -20,6 +20,7 @@
         $instagram = empty( $instance['instagram'] ) ? '' : $instance['instagram'];
         $flikr = empty( $instance['flikr'] ) ? '' : $instance['flikr'];
         $pinterest = empty( $instance['pinterest'] ) ? '' : $instance['pinterest'];
+        $snapchat = empty( $instance['snapchat'] ) ? '' : $instance['snapchat'];
         $googleplus = empty( $instance['googleplus'] ) ? '' : $instance['googleplus'];
         $github = empty( $instance['github'] ) ? '' : $instance['github'];
         $rss = $instance[ 'rss' ] ? 'true' : 'false';
@@ -31,7 +32,7 @@
 
         <?php if ( !empty ( $facebook ) ) : ?>
             <li class="et-social-icon et-social-facebook">
-                <a href="<?php echo esc_url( $facebook ); ?>" class="icon">
+                <a href="<?php echo esc_url( $facebook ); ?>" class="icon" target="_blank">
                     <i class="fa fa-facebook-square"></i>
                     <span><?php esc_html_e( 'Facebook', 'Divi' ); ?></span>
                 </a>
@@ -40,7 +41,7 @@
 
         <?php if ( !empty ( $twitter ) ) : ?>
             <li class="et-social-icon et-social-twitter">
-                <a href="<?php echo esc_url( $twitter ); ?>" class="icon">
+                <a href="<?php echo esc_url( $twitter ); ?>" class="icon" target="_blank">
                     <i class="fa fa-twitter-square"></i>
                     <span><?php esc_html_e( 'Twitter', 'Divi' ); ?></span>
                 </a>
@@ -49,7 +50,7 @@
 
         <?php if ( !empty ( $linkedin ) ) : ?>
             <li class="et-social-icon et-social-linkedin">
-                <a href="<?php echo esc_url( $linkedin ); ?>" class="icon">
+                <a href="<?php echo esc_url( $linkedin ); ?>" class="icon" target="_blank">
                     <i class="fa fa-linkedin-square"></i>
                     <span><?php esc_html_e( 'LinkedIn', 'Divi' ); ?></span>
                 </a>
@@ -58,7 +59,7 @@
 
         <?php if ( !empty ( $youtube ) ) : ?>
             <li class="et-social-icon et-social-youtube">
-                <a href="<?php echo esc_url( $youtube ); ?>" class="icon">
+                <a href="<?php echo esc_url( $youtube ); ?>" class="icon" target="_blank">
                     <i class="fa fa-youtube-square"></i>
                     <span><?php esc_html_e( 'YouTube', 'Divi' ); ?></span>
                 </a>
@@ -67,7 +68,7 @@
 
         <?php if ( !empty ( $vimeo ) ) : ?>
             <li class="et-social-icon et-social-vimeo">
-                <a href="<?php echo esc_url( $vimeo ); ?>" class="icon">
+                <a href="<?php echo esc_url( $vimeo ); ?>" class="icon" target="_blank">
                     <i class="fa fa-vimeo-square"></i>
                     <span><?php esc_html_e( 'Vimeo', 'Divi' ); ?></span>
                 </a>
@@ -76,7 +77,7 @@
 
         <?php if ( !empty ( $instagram ) ) : ?>
             <li class="et-social-icon et-social-instagram">
-                <a href="<?php echo esc_url( $instagram ); ?>" class="icon">
+                <a href="<?php echo esc_url( $instagram ); ?>" class="icon" target="_blank">
                     <i class="fa fa-instagram"></i>
                     <span><?php esc_html_e( 'Instagram', 'Divi' ); ?></span>
                 </a>
@@ -85,7 +86,7 @@
 
         <?php if ( !empty ( $flikr ) ) : ?>
             <li class="et-social-icon et-social-flickr">
-                <a href="<?php echo esc_url( $flikr ); ?>" class="icon">
+                <a href="<?php echo esc_url( $flikr ); ?>" class="icon" target="_blank">
                     <i class="fa fa-flickr"></i>
                     <span><?php esc_html_e( 'Flickr', 'Divi' ); ?></span>
                 </a>
@@ -94,16 +95,25 @@
 
         <?php if ( !empty ( $pinterest ) ) : ?>
             <li class="et-social-icon et-social-pinterest">
-                <a href="<?php echo esc_url( $pinterest ); ?>" class="icon">
+                <a href="<?php echo esc_url( $pinterest ); ?>" class="icon" target="_blank">
                     <i class="fa fa-pinterest"></i>
                     <span><?php esc_html_e( 'Pinterest', 'Divi' ); ?></span>
                 </a>
             </li>
         <?php endif; ?>
 
+        <?php if ( !empty ( $snapchat ) ) : ?>
+            <li class="et-social-icon et-social-snapchat">
+                <a href="<?php echo esc_url( $snapchat ); ?>" class="icon" target="_blank">
+                    <i class="fa fa-snapchat-square"></i>
+                    <span><?php esc_html_e( 'Snapchat', 'Divi' ); ?></span>
+                </a>
+            </li>
+        <?php endif; ?>
+
         <?php if ( !empty ( $googleplus ) ) : ?>
             <li class="et-social-icon et-social-google-plus">
-                <a href="<?php echo esc_url( $googleplus ); ?>" class="icon">
+                <a href="<?php echo esc_url( $googleplus ); ?>" class="icon" target="_blank">
                     <i class="fa fa-google-plus-square"></i>
                     <span><?php esc_html_e( 'Google+', 'Divi' ); ?></span>
                 </a>
@@ -112,7 +122,7 @@
 
         <?php if ( !empty ( $github ) ) : ?>
             <li class="et-social-icon et-social-github">
-                <a href="<?php echo esc_url( $github ); ?>" class="icon">
+                <a href="<?php echo esc_url( $github ); ?>" class="icon" target="_blank">
                     <i class="fa fa-github"></i>
                     <span><?php esc_html_e( 'GitHub', 'Divi' ); ?></span>
                 </a>
@@ -125,7 +135,7 @@
                 : get_bloginfo( 'rss2_url' );
             ?>
             <li class="et-social-icon et-social-rss">
-                <a href="<?php echo esc_url( $et_rss_url ); ?>" class="icon">
+                <a href="<?php echo esc_url( $et_rss_url ); ?>" class="icon" target="_blank">
                     <i class="fa fa-rss"></i>
                     <span><?php esc_html_e( 'RSS', 'Divi' ); ?></span>
                 </a>
@@ -151,6 +161,7 @@
         $instagram = isset($instance['instagram']) ? esc_url($instance['instagram']) : '';
         $flikr = isset($instance['flikr']) ? esc_url($instance['flikr']) : '';
         $pinterest = isset($instance['pinterest']) ? esc_url($instance['pinterest']) : '';
+        $snapchat = isset($instance['snapchat']) ? esc_url($instance['snapchat']) : '';
         $googleplus = isset($instance['googleplus']) ? esc_url($instance['googleplus']) : '';
         $github = isset($instance['github']) ? esc_url($instance['github']) : '';
         $contributeLink = isset($instance['contributeLink']) ? esc_url($instance['contributeLink']) : '';
@@ -196,6 +207,11 @@
           <label for="<?php echo $this->get_field_id('pinterest'); ?>"><?php _e('Pinterest'); ?></label> 
           <input class="widefat" id="<?php echo $this->get_field_id('pinterest'); ?>" name="<?php echo $this->get_field_name('pinterest'); ?>" type="text" value="<?php echo $pinterest; ?>" />
         </p>
+        
+        <p>
+          <label for="<?php echo $this->get_field_id('snapchat'); ?>"><?php _e('Snapchat'); ?></label> 
+          <input class="widefat" id="<?php echo $this->get_field_id('snapchat'); ?>" name="<?php echo $this->get_field_name('snapchat'); ?>" type="text" value="<?php echo $snapchat; ?>" />
+        </p>
 
         <p>
           <label for="<?php echo $this->get_field_id('googleplus'); ?>"><?php _e('Google Plus'); ?></label> 
@@ -227,6 +243,7 @@
         $instance['instagram'] = esc_url( $new_instance['instagram'] );   
         $instance['flikr'] = esc_url( $new_instance['flikr'] );   
         $instance['pinterest'] = esc_url( $new_instance['pinterest'] );   
+        $instance['snapchat'] = esc_url( $new_instance['snapchat'] );   
         $instance['googleplus'] = esc_url( $new_instance['googleplus'] );   
         $instance['github'] = esc_url( $new_instance['github'] );    
         $instance['rss'] = $new_instance[ 'rss' ]; 

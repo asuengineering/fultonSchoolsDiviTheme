@@ -23,7 +23,7 @@
 
         <div id="fse-endorsed-logo">
             <a href="https://engineering.asu.edu/" title="Ira A. Fulton Schools of Engineering, Arizona State University" target="_blank">
-                <img class="color-logo" src="<?php echo get_stylesheet_directory_uri() . '/assets/endorsed-footer/img/asu_fultonengineering_horiz_colorlogo.png' ?>"  alt="Ira A. Fulton Schools of Engineering @ Arizona State University" />
+                <!-- <img class="color-logo" src="<?php echo get_stylesheet_directory_uri() . '/assets/endorsed-footer/img/asu_fultonengineering_horiz_colorlogo.png' ?>"  alt="Ira A. Fulton Schools of Engineering @ Arizona State University" /> -->
                 <img class="white-logo" src="<?php echo get_stylesheet_directory_uri() . '/assets/endorsed-footer/img/asu_fultonengineering_horiz_white.png' ?>"  alt="Ira A. Fulton Schools of Engineering @ Arizona State University" />
             </a>
         </div>
