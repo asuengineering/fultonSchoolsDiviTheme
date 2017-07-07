@@ -508,7 +508,7 @@ class Custom_ET_Builder_Module_Filterable_Portfolio extends ET_Builder_Module {
 					<p class="post-meta"><?php echo get_the_term_list( get_the_ID(), 'project_category', '', ', ' ); ?></p>
 				<?php endif; ?>
 
-				<?php the_excerpt(); ?>
+				<div class="portfolio_excerpt"><?php the_excerpt(); ?></div>
 
 				</div><!-- .et_pb_portfolio_item -->
 				<?php
