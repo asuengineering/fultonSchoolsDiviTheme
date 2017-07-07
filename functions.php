@@ -46,7 +46,31 @@ function fsdt_enqueue_scripts() {
 add_action( 'wp_enqueue_scripts', 'fsdt_enqueue_scripts' );
 /* -------------------------- */
 
-/* Admin scripts, specifically 
+/* Portfolio Item Enhancements
+ -- Move Portfolio Items to Child Theme (As CPT)
+ -- Add excerpt to ouutput of module.
+
+From: https://github.com/kary4/divituts/wiki/Moving-Filterable-Portfolio-module-to-child-theme
+Includes: custom-modules/cfwpm.php
+---------------------------------- */ 
+function divi_child_theme_setup() {
+    if ( ! class_exists('ET_Builder_Module') ) {
+        return;
+    }
+
+    get_template_part( 'custom-modules/cfwpm' );
+
+    $cfwpm = new Custom_ET_Builder_Module_Filterable_Portfolio();
+
+    remove_shortcode( 'et_pb_filterable_portfolio' );
+    
+    add_shortcode( 'et_pb_filterable_portfolio', array($cfwpm, '_shortcode_callback') );
+    
+}
+
+add_action( 'wp', 'divi_child_theme_setup', 9999 );
+
+/* Admin scripts 
 ---------------------------------- */ 
 function asu_enqueue_admin_scripts() {
     wp_register_style('fontawesome', get_stylesheet_directory_uri() . '/fontawesome.css' );
