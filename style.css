@@ -5,7 +5,7 @@
     Template:       Divi
     Description:    Arizona State University's Ira A. Fulton Schools of Engineering Child Theme for Divi (ASU Web Standards compliant)
 
-    Version:        1.8.3
+    Version:        1.8.4
 
     GitHub Theme URI: https://github.com/fsoe-asu/fultonSchoolsDiviTheme
     GitHub Branch:    master
@@ -16,7 +16,7 @@ body {
     font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 16px;
     color: #222222;
-    font-weight: 200;
+    font-weight: 400;
     line-height: 1.44em;
 }
 
