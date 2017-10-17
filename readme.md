@@ -14,6 +14,9 @@ Please also note that this repository contains a child theme and not a stand-alo
 
 ## Enhancements ##
 
+#### Version 1.8.4 ####
+* Minor CSS fixes, added utility class for sidebar creation. 
+
 #### Version 1.8.3 ####
 * Included new assets for ASU Brand Standards, including fixes to the global header, footer and endorsed logo. 
 * Added Snapchat to the ASU Social Medial Icons Footer Widget
