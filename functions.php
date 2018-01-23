@@ -5,14 +5,9 @@ define('ASU_CHILD_THEME_DIRECTORY', get_stylesheet_directory());
 include(ASU_CHILD_THEME_DIRECTORY . '/includes/modules/asu-child-et-builder-modules.php');
 /* include customiser settings */
 include(ASU_CHILD_THEME_DIRECTORY . '/includes/asu-customiser-settings.php');
-/* include admin forms */
-include(ASU_CHILD_THEME_DIRECTORY . '/includes/asu-admin-social-media.php');
-include(ASU_CHILD_THEME_DIRECTORY . '/includes/asu-admin-sidebar-widget.php');
 /* include shortcodes */
 include(ASU_CHILD_THEME_DIRECTORY . '/includes/asu-child-shortcodes.php');
 /* include widgets */
-include(ASU_CHILD_THEME_DIRECTORY . '/widgets/asu-widget-sidebar.php');
-include(ASU_CHILD_THEME_DIRECTORY . '/widgets/asu-widget-footer.php');
 include(ASU_CHILD_THEME_DIRECTORY . '/widgets/asufse-endorsed-footer-widget.php');
 include(ASU_CHILD_THEME_DIRECTORY . '/widgets/asufse-socialicons-footer-widget.php');
 
@@ -45,6 +40,11 @@ function fsdt_enqueue_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'fsdt_enqueue_scripts' );
 /* -------------------------- */
+
+// Eliminate RSS Feed mentions in the header. Results in a 404 if there are no posts in the site.
+remove_action( 'wp_head', 'feed_links_extra', 3 );
+remove_action( 'wp_head', 'feed_links', 2 );
+
 
 /* Admin scripts, specifically 
 ---------------------------------- */ 

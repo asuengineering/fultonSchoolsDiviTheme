@@ -14,6 +14,10 @@ Please also note that this repository contains a child theme and not a stand-alo
 
 ## Enhancements ##
 
+#### Version 1.8.5 ####
+* Addresses several automatically generated broken links to RSS feeds which may no exist under normal circumstances.
+* Decommissions outdated theme options pages and widgets.
+
 #### Version 1.8.4 ####
 * Minor CSS fixes, added utility class for sidebar creation. 
 

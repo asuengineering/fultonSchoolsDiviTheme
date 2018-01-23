@@ -23,7 +23,6 @@
         $snapchat = empty( $instance['snapchat'] ) ? '' : $instance['snapchat'];
         $googleplus = empty( $instance['googleplus'] ) ? '' : $instance['googleplus'];
         $github = empty( $instance['github'] ) ? '' : $instance['github'];
-        $rss = $instance[ 'rss' ] ? 'true' : 'false';
         $contributeLink = empty( $instance['contributeLink'] ) ? '' : $instance['contributeLink'];
         
         echo $args['before_widget'] ?>
@@ -128,18 +127,6 @@
                 </a>
             </li>
         <?php endif; ?>
-
-        <?php
-            $et_rss_url = '' !== et_get_option( 'divi_rss_url' )
-                ? et_get_option( 'divi_rss_url' )
-                : get_bloginfo( 'rss2_url' );
-            ?>
-            <li class="et-social-icon et-social-rss">
-                <a href="<?php echo esc_url( $et_rss_url ); ?>" class="icon" target="_blank">
-                    <i class="fa fa-rss"></i>
-                    <span><?php esc_html_e( 'RSS', 'Divi' ); ?></span>
-                </a>
-            </li>
 
         </ul>
 
@@ -246,7 +233,6 @@
         $instance['snapchat'] = esc_url( $new_instance['snapchat'] );   
         $instance['googleplus'] = esc_url( $new_instance['googleplus'] );   
         $instance['github'] = esc_url( $new_instance['github'] );    
-        $instance['rss'] = $new_instance[ 'rss' ]; 
         $instance['contributeLink'] = esc_url( $new_instance['contributeLink'] );   
 
         return $instance;
