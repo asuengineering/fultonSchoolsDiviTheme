@@ -14,6 +14,10 @@ Please also note that this repository contains a child theme and not a stand-alo
 
 ## Enhancements ##
 
+#### Version 1.8.6 ####
+* Updates global header and footer assets.
+* Addresses accessibility concerns for parent theme regarding :focus definition.
+
 #### Version 1.8.5 ####
 * Addresses several automatically generated broken links to RSS feeds which may no exist under normal circumstances.
 * Decommissions outdated theme options pages and widgets.
