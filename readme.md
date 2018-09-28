@@ -14,34 +14,50 @@ Please also note that this repository contains a child theme and not a stand-alo
 
 ## Enhancements ##
 
+#### Version 1.9.0 (Iago) ####
+This version of the FSDT begins with a refactoring of the global ASU Header and Footer elements to conform more closely with the code choices made in the [ASU Divi theme](https://github.com/asuengineering/asu-divi). This is also an official recognition of [ASU Divi](https://github.com/asuengineering/asu-divi) as an eventual replacement for this product. A sunset plan is forthcoming.
+
+* Refactored CSS and included styles to directly call ASU header and footer elements from the original UTO repository.
+* Footer elements updated to include the 2019 Innovation badge.
+
+> "When devils will the blackest sins put on / They do suggest at first with heavenly shows"
+-- *Iago, Othello (1503-1504)*
+
 #### Version 1.8.6 ####
+
 * Updates global header and footer assets.
 * Addresses accessibility concerns for parent theme regarding :focus definition.
 
 #### Version 1.8.5 ####
+
 * Addresses several automatically generated broken links to RSS feeds which may no exist under normal circumstances.
 * Decommissions outdated theme options pages and widgets.
 
 #### Version 1.8.4 ####
+
 * Minor CSS fixes, added utility class for sidebar creation. 
 
 #### Version 1.8.3 ####
+
 * Included new assets for ASU Brand Standards, including fixes to the global header, footer and endorsed logo. 
 * Added Snapchat to the ASU Social Medial Icons Footer Widget
 
 #### Version 1.8.2 ####
+
 * Bug fix for new footer widgets. Contribute URL's now appear as expected. (Previously defaulted to current site home page.)
 * Version number incorrectly reported with last major release. Skipped ahead to 1.8.2 for GitHub Updater to work properly.
 
 #### Version 1.8 (Balthasar) ####
 
 Two new widgets for the super-footer were created with this release to accommodate the new Fulton Schools of Engineering logo and more closely conform to [ASU Brand Guide](https://brandguide.asu.edu/web-standards/enterprise/super-footer) standards.
+
 * The new **ASU Engineering Footer Widget** automatically includes the new FSE endorsed logo, complete with link to the Engineering home page. No need to add it to the media library.
 * The new **ASU Social Media Icons Footer Widget** centralizes the location of all URL entries for social media channels to one widget.
 
 This release also depreciates two older widgets from an older FSDT release. See wp-admin/admin.php?page=asu_social_media_editor and wp-admin/admin.php?page=asu_social_media_editor within your install for more details.
 
 Further improvements also include:
+
 * Proper handling/styling of linked images and external links. 
 * Improvements to the Divi Portfolio module to align the filter bar and other module elements to ASU Brand Standards.
 
