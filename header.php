@@ -32,64 +32,70 @@
 
 	<?php wp_head(); ?>
 
+	<!-- Begin ASU Heads -->
+	<?php asuwp_load_global_head_scripts(); ?>
+	<!-- END ASU Heads -->
+
 </head>
 <body <?php body_class(); ?>>  
 
 	<!-- Google Tag Manager ASU Universal -->
-	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KDWN8Z"
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-		'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-KDWN8Z');</script>
-		<!-- End Google Tag Manager ASU Universal -->
-		<!-- Lavidge AdWords Tracking -->
-		<script>
-			var ssoval;
-			if (document.cookie.indexOf("SSONAME") === -1) {
-			ssoval = "false";
-			} else {
-			ssoval = "true";
-			}
-			var versaTag = {};
-			versaTag.id = "5381";
-			versaTag.sync = 0;
-			versaTag.dispType = "js";
-			versaTag.ptcl = "HTTPS";
-			versaTag.bsUrl = "bs.serving-sys.com/BurstingPipe";
-			//VersaTag activity parameters include all conversion parameters including custom parameters and Predefined parameters. Syntax: "ParamName1":"ParamValue1", "ParamName2":"ParamValue2". ParamValue can be empty.
-			versaTag.activityParams = {
-			//Predefined parameters:
-			"OrderID":"","Session":"","Value":"","productid":"","productinfo":"","Quantity":""
-			//Custom parameters:
-			};
-			//Static retargeting tags parameters. Syntax: "TagID1":"ParamValue1", "TagID2":"ParamValue2". ParamValue can be empty.
-			versaTag.retargetParams = {};
-			//Dynamic retargeting tags parameters. Syntax: "TagID1":"ParamValue1", "TagID2":"ParamValue2". ParamValue can be empty.
-			versaTag.dynamicRetargetParams = {};
-			// Third party tags conditional parameters and mapping rule parameters. Syntax: "CondParam1":"ParamValue1", "CondParam2":"ParamValue2". ParamValue can be empty.
-			versaTag.conditionalParams = {"ssoval":ssoval};
-			//versaTag.conditionalParams = {};
-			//versaTag.conditionalParams["ssoval"] = ssoval;
-		</script>
-		<script id="ebOneTagUrlId" src="https://secure-ds.serving-sys.com/SemiCachedScripts/ebOneTag.js"></script>
-		<noscript>
-			<iframe src="https://bs.serving-sys.com/BurstingPipe?
-			cn=ot&amp;
-			onetagid=5381&amp;
-			ns=1&amp;
-			activityValues=$$Value=[Value]&amp;OrderID=[OrderID]&amp;Session=[Session]&amp;ProductID=[ProductID]&amp;ProductInfo=[ProductInfo]&amp;Quantity=[Quantity]$$&amp;
-			retargetingValues=$$$$&amp;
-			dynamicRetargetingValues=$$$$&amp;
-			acp=$$ssoval-false&amp;"style="display:none;width:0px;height:0px"></iframe>
-		</noscript>
-		<!-- End Lavidge AdWords Tracking -->
+	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KDWN8Z" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-KDWN8Z');</script>
+	<!-- End Google Tag Manager ASU Universal -->
+	<!-- Lavidge AdWords Tracking -->
+	<script>
+		var ssoval;
+		if (document.cookie.indexOf("SSONAME") === -1) {
+		ssoval = "false";
+		} else {
+		ssoval = "true";
+		}
+		var versaTag = {};
+		versaTag.id = "5381";
+		versaTag.sync = 0;
+		versaTag.dispType = "js";
+		versaTag.ptcl = "HTTPS";
+		versaTag.bsUrl = "bs.serving-sys.com/BurstingPipe";
+		//VersaTag activity parameters include all conversion parameters including custom parameters and Predefined parameters. Syntax: "ParamName1":"ParamValue1", "ParamName2":"ParamValue2". ParamValue can be empty.
+		versaTag.activityParams = {
+		//Predefined parameters:
+		"OrderID":"","Session":"","Value":"","productid":"","productinfo":"","Quantity":""
+		//Custom parameters:
+		};
+		//Static retargeting tags parameters. Syntax: "TagID1":"ParamValue1", "TagID2":"ParamValue2". ParamValue can be empty.
+		versaTag.retargetParams = {};
+		//Dynamic retargeting tags parameters. Syntax: "TagID1":"ParamValue1", "TagID2":"ParamValue2". ParamValue can be empty.
+		versaTag.dynamicRetargetParams = {};
+		// Third party tags conditional parameters and mapping rule parameters. Syntax: "CondParam1":"ParamValue1", "CondParam2":"ParamValue2". ParamValue can be empty.
+		versaTag.conditionalParams = {"ssoval":ssoval};
+		//versaTag.conditionalParams = {};
+		//versaTag.conditionalParams["ssoval"] = ssoval;
+	</script>
+	<script id="ebOneTagUrlId" src="https://secure-ds.serving-sys.com/SemiCachedScripts/ebOneTag.js"></script>
+	<noscript>
+		<iframe src="https://bs.serving-sys.com/BurstingPipe?
+		cn=ot&amp;
+		onetagid=5381&amp;
+		ns=1&amp;
+		activityValues=$$Value=[Value]&amp;OrderID=[OrderID]&amp;Session=[Session]&amp;ProductID=[ProductID]&amp;ProductInfo=[ProductInfo]&amp;Quantity=[Quantity]$$&amp;
+		retargetingValues=$$$$&amp;
+		dynamicRetargetingValues=$$$$&amp;
+		acp=$$ssoval-false&amp;"style="display:none;width:0px;height:0px">
+		</iframe>
+	</noscript>
+	<!-- End Lavidge AdWords Tracking -->
 
+	<!-- Begin ASU Header  -->
 	<div id="asu-header">
-    	<?php get_template_part( 'header-asu' ); ?>
+    	<?php asuwp_load_global_header(); ?>
     	<?php echo asu_get_school_names(); ?>
     </div>  
+	<!-- END ASU Header -->
 
     <div id="page-container">
 
@@ -270,8 +276,7 @@
 							$menuClass = 'nav';
 							if ( 'on' == et_get_option( 'divi_disable_toptier' ) ) $menuClass .= ' et_disable_top_tier';
 							$primaryNav = '';
-							$asu_home_anchor_tag = asu_get_home_menu_item();
-							$primaryNav = wp_nav_menu( array( 'theme_location' => 'primary-menu', 'container' => '', 'fallback_cb' => '', 'menu_class' => $menuClass, 'menu_id' => 'top-menu', 'echo' => false, 'items_wrap' => '<ul id="%1$s" class="%2$s"><li>'.$asu_home_anchor_tag.'</li>%3$s</ul>' ) );
+							$primaryNav = wp_nav_menu( array( 'theme_location' => 'primary-menu', 'container' => '', 'fallback_cb' => '', 'menu_class' => $menuClass, 'menu_id' => 'top-menu', 'echo' => false ) );
 
 							if ( '' == $primaryNav ) :
 						?>

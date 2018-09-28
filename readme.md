@@ -10,18 +10,9 @@ The parent theme for the FSDT is the excellent [Divi Theme from Elegant Themes](
 
 Please also note that this repository contains a child theme and not a stand-alone theme designed for use with [The Divi Builder](http://www.elegantthemes.com/plugins/divi-builder/) plugin also from Elegant Themes. 
 
-## Recommendations ##
-Out of the box, the [Divi theme](http://www.elegantthemes.com/gallery/divi/) has some accessibility concerns that have ~~been ignored~~ not been completely addressed by Elegant Themes. Luckily, the folks at CampusPress have put together a plugin that addresses multiple WCAG 2.0 concerns. 
-
-Our recommendation for Divi users is to use this plugin along side the theme for maximum accessibility.
-* [Divi Accessibility](https://wordpress.org/plugins/accessible-divi/), by CampusPress
-
 ![Sparky's Trident](https://brandguide.asu.edu/sites/default/files/styles/panopoly_image_original/public/asu_brandhq_images_master_pitchfork_0.png?itok=CdnAzLZW)
 
 ## Enhancements ##
-
-#### Version 1.8.7 ####
-* Reverts CSS change for :focus back to theme default. Further accessibility concerns will be handled by adoption of a plugin that works along side Divi.
 
 #### Version 1.8.6 ####
 * Updates global header and footer assets.
