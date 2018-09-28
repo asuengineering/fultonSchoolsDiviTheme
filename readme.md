@@ -14,7 +14,7 @@ Please also note that this repository contains a child theme and not a stand-alo
 
 ## Enhancements ##
 
-#### Version 1.9.0 (Iago) ####
+### Version 1.9.0 (Iago) ###
 This version of the FSDT begins with a refactoring of the global ASU Header and Footer elements to conform more closely with the code choices made in the [ASU Divi theme](https://github.com/asuengineering/asu-divi). This is also an official recognition of [ASU Divi](https://github.com/asuengineering/asu-divi) as an eventual replacement for this product. A sunset plan is forthcoming.
 
 * Refactored CSS and included styles to directly call ASU header and footer elements from the original UTO repository.
@@ -47,7 +47,7 @@ This version of the FSDT begins with a refactoring of the global ASU Header and 
 * Bug fix for new footer widgets. Contribute URL's now appear as expected. (Previously defaulted to current site home page.)
 * Version number incorrectly reported with last major release. Skipped ahead to 1.8.2 for GitHub Updater to work properly.
 
-#### Version 1.8 (Balthasar) ####
+### Version 1.8 (Balthasar) ###
 
 Two new widgets for the super-footer were created with this release to accommodate the new Fulton Schools of Engineering logo and more closely conform to [ASU Brand Guide](https://brandguide.asu.edu/web-standards/enterprise/super-footer) standards.
 
@@ -64,7 +64,7 @@ Further improvements also include:
 > "Sigh no more, ladies, sigh no more, Men were deceivers ever, One foot in sea and one on shore, To one thing constant never."
 -- *Balthasar, Much Ado About Nothing (882-885)*
 
-#### Version 1.7 (Portia) ####
+### Version 1.7 (Portia) ###
 
 * Changes to Mega Menu formatting now includes a column header format for each column of links within the menu.
 * Introduced new experimental "compact" formatting for sidebar elements. Reduces padding/elements within sidebars build within Divi. Adds differentiation among H3/H4/H5 elements used as headers within.
@@ -75,7 +75,7 @@ Further improvements also include:
 > "How far that little candle throws his beams! So shines a good deed in a weary world."
 -- *Portia, The Merchant of Venice (2547)*
 
-#### Version 1.6 (Costard) ####
+### Version 1.6 (Costard) ###
 
 Version 1.6 focused on the proper implementation of ASU Global Header and Footer assets. All assets are included with the the theme, and we continue to watch the ASU Web Standards page (and eventual repo) for changes and apply them as needed.
 
@@ -86,7 +86,7 @@ I'll slash; I'll do it by the sword. I bepray you,
 let me borrow my arms again."
 -- *Costard, Love's Labours' Lost (2633-2635)*
 
-#### Version 1.5 ####
+### Version 1.5 ###
 
 The following enhancements are available within the theme.
 * The school name fields are available via the Customizer. (Appearance -> Customize -> Header & Navigation -> Header School Names)
