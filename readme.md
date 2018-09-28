@@ -18,6 +18,7 @@ Please also note that this repository contains a child theme and not a stand-alo
 This version of the FSDT begins with a refactoring of the global ASU Header and Footer elements to conform more closely with the code choices made in the [ASU Divi theme](https://github.com/asuengineering/asu-divi). This is also an official recognition of [ASU Divi](https://github.com/asuengineering/asu-divi) as an eventual replacement for this product. A sunset plan is forthcoming.
 
 * Refactored CSS and included styles to directly call ASU header and footer elements from the original UTO repository.
+* Removed unused global header and footer elements within the theme's `assets` folder.
 * Footer elements updated to include the 2019 Innovation badge.
 
 > "When devils will the blackest sins put on / They do suggest at first with heavenly shows"
