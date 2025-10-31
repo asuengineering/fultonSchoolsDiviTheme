@@ -1,8 +1,8 @@
 # Fulton Schools Divi Theme #
 
-A child theme for [WordPress](http://wordpress.org) in use by various publications from the [Ira A. Fulton Schools of Engineering](http://engineering.asu.edu) at [Arizona State University](http://asu.edu). 
+FSDT was a child theme for [WordPress](http://wordpress.org) and the 3.x version of the [Divi Theme from Elegant Themes](http://www.elegantthemes.com/gallery/divi/) that was in use by various publications from the ASU Engineering. It was replaced by the much less opinionated ASU Divi theme at https://github.com/asuengineering/asu-divi. 
 
-The theme has several enhancements that make it specific to the Fulton Schools of Engineering. It has been made public in the hopes that other organizations within ASU will benefit from the work as WordPress adoption on campus continues to increase.
+The child theme was archived on Oct 30, 2025.
 
 ## Requirements ##
 
